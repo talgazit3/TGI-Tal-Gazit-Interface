@@ -3,149 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGI Digital | Next-Gen Web Solutions</title>
+    <title>TGI Digital | Premium Web Architecture</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        body { background-color: #fdfdfd; scroll-behavior: smooth; }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-        }
-        .section-fade { animation: fadeIn 1s ease-out forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        body { background-color: #ffffff; scroll-behavior: smooth; font-family: 'Assistant', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .text-gradient { background: linear-gradient(to right, #000000, #4b5563); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .service-card:hover { transform: translateY(-10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .blob { filter: blur(60px); position: fixed; z-index: -1; opacity: 0.4; }
         .hide { display: none !important; }
-        .btn-black { background: #000; color: #fff; transition: all 0.3s ease; }
-        .btn-black:hover { background: #333; transform: translateY(-2px); }
     </style>
 </head>
-<body class="text-gray-900 antialiased font-sans">
+<body class="text-gray-900 overflow-x-hidden">
 
-    <div class="fixed inset-0 -z-10">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-40"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-50 rounded-full filter blur-3xl opacity-40"></div>
-    </div>
+    <div class="blob top-0 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full"></div>
+    <div class="blob bottom-0 left-0 w-[600px] h-[600px] bg-purple-50 rounded-full"></div>
 
-    <nav class="sticky top-4 z-40 flex justify-center px-4">
-        <div class="glass-panel p-2 rounded-2xl flex gap-2 shadow-lg max-w-sm w-full">
-            <button onclick="scrollToId('home')" class="flex-1 py-2 text-sm font-bold bg-white rounded-xl shadow-sm">בית</button>
-            <button onclick="scrollToId('about')" class="flex-1 py-2 text-sm text-gray-500">מי אני</button>
-            <button onclick="scrollToId('order')" class="flex-1 py-2 text-sm text-white bg-black rounded-xl">הזמן עכשיו</button>
+    <nav class="fixed top-0 w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto glass rounded-2xl p-3 flex justify-between items-center shadow-sm">
+            <div class="text-2xl font-extrabold tracking-tighter px-4">TGI<span class="font-light">.</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-gray-500">
+                <a href="#about" class="hover:text-black transition">מי אני</a>
+                <a href="#services" class="hover:text-black transition">שירותים</a>
+                <a href="#projects" class="hover:text-black transition">פרויקטים</a>
+            </div>
+            <a href="#order" class="bg-black text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:scale-105 transition active:scale-95">הזמן פרויקט</a>
         </div>
     </nav>
 
-    <div class="max-w-2xl mx-auto px-6 py-12 space-y-24">
-
-        <section id="home" class="text-center space-y-6 section-fade">
-            <div class="text-6xl mb-4 inline-block animate-bounce">💎</div>
-            <h1 class="text-5xl font-extrabold tracking-tighter">TGI <span class="font-light text-gray-400">Digital</span></h1>
-            <p class="text-xl text-gray-600 font-light max-w-lg mx-auto leading-relaxed text-balance">
-                High-Performance Code. <br>
-                <span class="font-bold text-black italic">Next-Gen Architecture.</span>
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 bg-gray-100 rounded-full text-[10px] font-bold tracking-[0.2em] text-gray-500 mb-6 uppercase">Modern Digital Solutions</div>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-tight mb-8">
+                בניית אתרים ברמה <br> שטרם הכרתם.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl mx-auto leading-relaxed mb-10">
+                מתכנת Full-Stack בן 15 שיוצר חוויות דיגיטליות באמצעות <span class="text-black font-semibold">Clean Code</span> וארכיטקטורה מודרנית.
             </p>
-            <div class="flex flex-wrap justify-center gap-3 pt-4">
-                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">React Native</span>
-                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">Node.js</span>
-                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">Clean UI</span>
+            <div class="flex justify-center gap-4">
+                <a href="#order" class="bg-black text-white px-8 py-4 rounded-2xl font-bold shadow-2xl hover:bg-gray-800 transition">בואו נתחיל</a>
+                <a href="tel:0584227408" class="bg-white border border-gray-200 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">שיחת ייעוץ</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="glass-panel rounded-[3rem] p-10 shadow-xl space-y-6">
-            <h2 class="text-3xl font-extrabold">קצת עלי</h2>
-            <p class="text-gray-600 leading-relaxed text-lg">
-                אני טל, בן 15, מפתח <span class="text-black font-semibold italic">Full-Stack</span> שחי ונושם קוד. 
-                בניגוד למערכות אוטומטיות, אני כותב <span class="underline">Custom Code</span> מאפס כדי להבטיח אתר מהיר, מאובטח ומותאם אישית.
-            </p>
-            <div class="bg-black/5 p-6 rounded-3xl border border-black/5">
-                <h4 class="font-bold mb-2">📍 הטבה לתושבי האיזור</h4>
-                <p class="text-sm text-gray-600">
-                    תושבי <strong>אלוני אבא, בית לחם הגלילית והסביבה?</strong> אני מאמין בקהילה. אתם מקבלים ליווי אישי עד הבית ומחיר מיוחד של שכנים.
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div>
+                <div class="text-4xl font-bold mb-2">100%</div>
+                <div class="text-gray-400 text-sm tracking-widest uppercase">Custom Code</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">0.8s</div>
+                <div class="text-gray-400 text-sm tracking-widest uppercase">Load Speed</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">24/7</div>
+                <div class="text-gray-400 text-sm tracking-widest uppercase">Security Monitor</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">UI/UX</div>
+                <div class="text-gray-400 text-sm tracking-widest uppercase">Pixel Perfect</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-extrabold">קוד זה אומנות.</h2>
+                <p class="text-lg text-gray-500 leading-relaxed">
+                    אני טל, מפתח אתרים שמתמחה בטכנולוגיות המתקדמות ביותר בשוק. אני משתמש ב-<strong>React</strong> ו-<strong>Node.js</strong> כדי לבנות מערכות שיודעות לצמוח יחד עם העסק שלכם.
                 </p>
-            </div>
-        </section>
-
-        <section class="space-y-8">
-            <h2 class="text-3xl font-extrabold text-center">למי זה מתאים?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-panel p-6 rounded-3xl border-r-4 border-black">
-                    <span class="text-2xl">📸</span>
-                    <h4 class="font-bold mt-3">פורטפוליו ויוצרים</h4>
-                    <p class="text-xs text-gray-400 mt-1 italic">Showcase your work with style.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-3xl border-r-4 border-gray-300">
-                    <span class="text-2xl">🏬</span>
-                    <h4 class="font-bold mt-3">עסקים ונותני שירות</h4>
-                    <p class="text-xs text-gray-400 mt-1 italic">Scalable digital presence.</p>
+                <div class="p-8 bg-gray-50 rounded-[2rem] border-r-4 border-black">
+                    <h4 class="font-bold text-xl mb-2">שכנים של TGI Digital?</h4>
+                    <p class="text-gray-500">תושבי אלוני אבא, בית לחם והסביבה נהנים מהטבה בלעדית: פגישת אפיון פנים אל פנים ומחיר מופחת משמעותית.</p>
                 </div>
             </div>
-        </section>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="glass p-6 rounded-3xl text-center shadow-xl">
+                    <div class="text-3xl mb-2">📱</div>
+                    <div class="font-bold">Mobile First</div>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center shadow-xl mt-8">
+                    <div class="text-3xl mb-2">⚡</div>
+                    <div class="font-bold">Fast API</div>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center shadow-xl">
+                    <div class="text-3xl mb-2">🔐</div>
+                    <div class="font-bold">SSL Secure</div>
+                </div>
+                <div class="glass p-6 rounded-3xl text-center shadow-xl mt-8">
+                    <div class="text-3xl mb-2">🎨</div>
+                    <div class="font-bold">Clean UI</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="order" class="glass-panel rounded-[3rem] p-10 shadow-2xl border-t-8 border-black">
-            <h2 class="text-3xl font-extrabold mb-2 text-center">הזמנת פרויקט</h2>
-            <p class="text-center text-gray-400 text-sm mb-8 italic">Ready to build something great?</p>
+    <section id="services" class="py-32 bg-gray-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-center mb-16">השירותים שלנו</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm service-card border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4 italic">Landing Pages</h3>
+                    <p class="text-gray-500 mb-6 italic">High-conversion pages that sell.</p>
+                    <ul class="text-sm space-y-2 font-semibold">
+                        <li>• עיצוב מותאם אישית</li>
+                        <li>• חיבור למערכות CRM</li>
+                        <li>• אופטימיזציה לנייד</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm service-card border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4 italic">E-Commerce</h3>
+                    <p class="text-gray-500 mb-6 italic">Scale your local business.</p>
+                    <ul class="text-sm space-y-2 font-semibold">
+                        <li>• ניהול מלאי חכם</li>
+                        <li>• סליקה מאובטחת</li>
+                        <li>• חווית קנייה מהירה</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm service-card border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4 italic">Full Systems</h3>
+                    <p class="text-gray-500 mb-6 italic">Custom built for your needs.</p>
+                    <ul class="text-sm space-y-2 font-semibold">
+                        <li>• בסיסי נתונים SQL/NoSQL</li>
+                        <li>• מערכות ניהול תוכן</li>
+                        <li>• API Integrations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto glass rounded-[3rem] p-8 md:p-16 shadow-2xl">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">מתחילים פרויקט חדש</h2>
+                <p class="text-gray-500">השאירו פרטים ותקבלו שיחת אפיון בחינם.</p>
+            </div>
             
-            <form id="orderForm" class="space-y-4 text-right">
-                <div class="grid grid-cols-2 gap-4 text-right">
-                    <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition">
-                    <input type="text" id="lastName" placeholder="שם משפחה" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition">
+            <form id="orderForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-right">
+                        <label class="text-xs font-bold mr-2 uppercase tracking-widest text-gray-400">שם פרטי</label>
+                        <input type="text" id="firstName" required class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 ring-black outline-none transition">
+                    </div>
+                    <div class="space-y-2 text-right">
+                        <label class="text-xs font-bold mr-2 uppercase tracking-widest text-gray-400">שם משפחה</label>
+                        <input type="text" id="lastName" required class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 ring-black outline-none transition">
+                    </div>
                 </div>
-                <input type="tel" id="phone" placeholder="מספר טלפון" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right">
-                <input type="email" id="email" placeholder="אימייל" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right">
-                <textarea id="project" placeholder="ספר לי קצת על האתר שאתה צריך..." rows="3" class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right"></textarea>
-                
-                <button type="submit" id="submitBtn" class="w-full py-5 btn-black rounded-2xl font-bold text-lg shadow-lg">שלח בקשה לדיסקורד</button>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2 text-right">
+                        <label class="text-xs font-bold mr-2 uppercase tracking-widest text-gray-400">טלפון</label>
+                        <input type="tel" id="phone" required class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 ring-black outline-none transition">
+                    </div>
+                    <div class="space-y-2 text-right">
+                        <label class="text-xs font-bold mr-2 uppercase tracking-widest text-gray-400">אימייל</label>
+                        <input type="email" id="email" required class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 ring-black outline-none transition text-right">
+                    </div>
+                </div>
+                <div class="space-y-2 text-right">
+                    <label class="text-xs font-bold mr-2 uppercase tracking-widest text-gray-400">תיאור הפרויקט</label>
+                    <textarea id="project" rows="4" class="w-full p-4 rounded-2xl bg-gray-50 border-none focus:ring-2 ring-black outline-none transition"></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="w-full py-6 bg-black text-white rounded-2xl font-extrabold text-xl shadow-xl hover:scale-[1.01] transition active:scale-95">שלח בקשה והתחל פרויקט</button>
             </form>
-            <p id="successMsg" class="text-green-600 text-center mt-4 hide font-bold">✅ ההודעה נשלחה! אצור קשר בהקדם.</p>
-        </section>
+            <div id="successMsg" class="mt-6 p-4 bg-green-50 text-green-700 rounded-2xl text-center font-bold hide italic">The data has been sent to the TGI server. Talk soon!</div>
+        </div>
+    </section>
 
-        <section class="text-center space-y-6 pb-20">
-            <h3 class="font-bold text-gray-300 uppercase tracking-[0.3em] text-[10px]">Contact Info</h3>
-            <a href="tel:0584227408" class="text-4xl font-extrabold hover:text-gray-500 transition tracking-tighter block">058-422-7408</a>
-            <div class="flex justify-center gap-8">
-                <a href="https://wa.me/972584227408" target="_blank" class="text-sm font-semibold hover:underline">WhatsApp</a>
-                <span class="text-gray-200">|</span>
-                <p class="text-sm text-gray-400 italic font-light">TGI Digital Hub</p>
-            </div>
-        </section>
-
-    </div>
+    <footer class="py-20 border-t border-gray-100 px-6 text-center">
+        <div class="text-3xl font-extrabold mb-8 tracking-tighter">TGI Digital Hub</div>
+        <div class="flex flex-col md:flex-row justify-center gap-8 mb-12 font-bold text-gray-400 uppercase text-xs tracking-widest">
+            <a href="tel:0584227408" class="hover:text-black">Call: 058-422-7408</a>
+            <a href="https://wa.me/972584227408" class="hover:text-black">WhatsApp Chat</a>
+            <span>Aloney Abba, Israel</span>
+        </div>
+        <div class="text-[10px] text-gray-300 tracking-[0.4em] uppercase">Built with Code by Tal • © 2026</div>
+    </footer>
 
     <script>
-        function scrollToId(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
-
         const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
 
         document.getElementById('orderForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
-            btn.innerText = "...שולח";
+            btn.innerText = "SENDING TO DISCORD...";
             btn.disabled = true;
-            
-            const formData = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                project: document.getElementById('project').value
-            };
 
             const discordMessage = {
                 embeds: [{
-                    title: "🚀 הזמנה חדשה ב-TGI Digital!",
+                    title: "💎 NEW CLIENT LEAD | TGI DIGITAL",
                     color: 0,
                     fields: [
-                        { name: "שם מלא", value: `${formData.firstName} ${formData.lastName}`, inline: true },
-                        { name: "טלפון", value: formData.phone, inline: true },
-                        { name: "אימייל", value: formData.email },
-                        { name: "תיאור הפרויקט", value: formData.project || "לא צוין" }
+                        { name: "Client Name", value: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`, inline: true },
+                        { name: "Contact Phone", value: document.getElementById('phone').value, inline: true },
+                        { name: "Email Address", value: document.getElementById('email').value },
+                        { name: "Project Details", value: document.getElementById('project').value || "No info provided" }
                     ],
-                    footer: { text: "נשלח מהאתר הרשמי" },
                     timestamp: new Date()
                 }]
             };
@@ -156,19 +216,12 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(discordMessage)
                 });
-
                 if (response.ok) {
                     document.getElementById('successMsg').classList.remove('hide');
                     document.getElementById('orderForm').reset();
-                } else {
-                    alert('שגיאה בשליחה. נסה שוב או התקשר אלי.');
                 }
-            } catch (err) {
-                alert('תקלה בחיבור. וודא שיש לך אינטרנט.');
-            } finally {
-                btn.innerText = "שלח בקשה לדיסקורד";
-                btn.disabled = false;
-            }
+            } catch (err) { alert('Check your connection.'); }
+            finally { btn.innerText = "שלח בקשה והתחל פרויקט"; btn.disabled = false; }
         });
     </script>
 </body>
