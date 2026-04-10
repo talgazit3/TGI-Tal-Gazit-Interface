@@ -6,16 +6,13 @@
     <title>Tal Digital - Premium Showcase</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Assistant', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Assistant', 'sans-serif'] },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                         'blob': 'blob 7s infinite',
@@ -37,12 +34,7 @@
     </script>
     
     <style>
-        body {
-            background-color: #f9fafb; /* רקע אפור בהיר מאוד לבסיס */
-            overflow-x: hidden;
-        }
-        
-        /* אפקט הזכוכית (Glassmorphism) */
+        body { background-color: #f9fafb; overflow-x: hidden; }
         .glass-card {
             background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(15px);
@@ -50,23 +42,16 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
         }
-        
-        /* אפקט זכוכית לכפתורים */
         .glass-btn {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
         }
-        
         .glass-btn:hover {
             background: rgba(255, 255, 255, 0.9);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-
-        /* השהיית אנימציה לרכיבים */
         .delay-1 { animation-delay: 0.2s; }
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
@@ -80,87 +65,81 @@
         <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
     </div>
 
-    <div class="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
         
-        <div class="glass-card w-full max-w-md rounded-3xl p-8 md:p-10 animate-fade-in-up opacity-0">
+        <div class="glass-card w-full max-w-md rounded-3xl p-8 animate-fade-in-up opacity-0">
             
             <header class="text-center mb-10">
                 <div class="w-20 h-20 bg-white/80 rounded-full mx-auto mb-4 shadow-inner flex items-center justify-center border border-white/50">
-                    <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11a13.921 13.921 0 00-2.347-7.361m3.44 2.04L9 11m0 0l2.347 7.361M12 11c0 3.517 1.009 6.799 2.753 9.571m3.44-2.04l-.054.09A13.916 13.916 0 0015 11a13.921 13.921 0 002.347-7.361m-3.44 2.04L15 11m0 0l-2.347 7.361m3.44-2.04L15 11" />
-                    </svg>
+                    <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 009 11a13.921 13.921 0 00-2.347-7.361m3.44 2.04L9 11m0 0l2.347 7.361M12 11c0 3.517 1.009 6.799 2.753 9.571m3.44-2.04l-.054.09A13.916 13.916 0 0015 11a13.921 13.921 0 002.347-7.361m-3.44 2.04L15 11m0 0l-2.347 7.361m3.44-2.04L15 11" /></svg>
                 </div>
-                <h1 class="text-3xl font-bold tracking-tighter text-gray-950">סטודיו <span class="text-gray-800 font-extralight">שגב</span></h1>
-                <p class="text-gray-600 mt-2 text-base">צילום אירועים ואדריכלות בסטייל מנצח</p>
+                <h1 class="text-3xl font-bold tracking-tighter text-gray-950">סטודיו שגב</h1>
+                <p class="text-gray-600 mt-2">צילום אירועים ואדריכלות</p>
             </header>
 
             <div class="space-y-4 mb-12">
-                
-                <a href="https://wa.me/" class="glass-btn flex items-center gap-4 w-full p-5 rounded-2xl shadow-sm animate-fade-in-up opacity-0 delay-1 hover:border-gray-300">
+                <a href="https://wa.me/" class="glass-btn flex items-center gap-4 w-full p-5 rounded-2xl shadow-sm animate-fade-in-up opacity-0 delay-1">
                     <div class="w-12 h-12 bg-gray-100/50 rounded-xl flex items-center justify-center text-2xl">📱</div>
                     <div>
-                        <span class="font-semibold text-gray-900 block text-lg">תיאום שיחת ייעוץ</span>
-                        <span class="text-sm text-gray-500 block -mt-1">זמין בוואטסאפ עכשיו</span>
+                        <span class="font-semibold block text-lg text-gray-900">תיאום שיחת ייעוץ</span>
+                        <span class="text-sm text-gray-500 block -mt-1">זמין בוואטסאפ</span>
                     </div>
-                    <svg class="w-5 h-5 text-gray-400 mr-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 </a>
 
-                <a href="#" class="glass-btn flex items-center gap-4 w-full p-5 rounded-2xl shadow-sm animate-fade-in-up opacity-0 delay-2 hover:border-gray-300">
+                <a href="#" class="glass-btn flex items-center gap-4 w-full p-5 rounded-2xl shadow-sm animate-fade-in-up opacity-0 delay-2">
                     <div class="w-12 h-12 bg-gray-100/50 rounded-xl flex items-center justify-center text-2xl">📸</div>
                     <div>
-                        <span class="font-semibold text-gray-900 block text-lg">תיק עבודות אינסטגרם</span>
-                        <span class="text-sm text-gray-500 block -mt-1">לראות את הקסם בעין</span>
+                        <span class="font-semibold block text-lg text-gray-900">תיק עבודות</span>
+                        <span class="text-sm text-gray-500 block -mt-1">אינסטגרם</span>
                     </div>
-                    <svg class="w-5 h-5 text-gray-400 mr-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 </a>
-
-                <a href="#" class="glass-btn flex items-center gap-4 w-full p-5 rounded-2xl shadow-sm animate-fade-in-up opacity-0 delay-3 hover:border-gray-300">
-                    <div class="w-12 h-12 bg-gray-100/50 rounded-xl flex items-center justify-center text-2xl">🌐</div>
-                    <div>
-                        <span class="font-semibold text-gray-900 block text-lg">גלריית אתר מלאה</span>
-                        <span class="text-sm text-gray-500 block -mt-1">פרויקטים נבחרים מ-2026</span>
-                    </div>
-                    <svg class="w-5 h-5 text-gray-400 mr-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                </a>
-                
             </div>
 
-<div class="animate-fade-in-up opacity-0 delay-3 mt-10">
-    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-5 px-1">הצצה לעבודות</h3>
-    <div class="grid grid-cols-3 gap-3">
-        
-        <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer" onclick="openModal(this.querySelector('img').src)">
-            <img src="a1.jpg" alt="Work 1" class="w-full h-full object-cover">
-        </div>
-
-        <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 delay-100 cursor-pointer" onclick="openModal(this.querySelector('img').src)">
-            <img src="a2.jpg" alt="Work 2" class="w-full h-full object-cover">
-        </div>
-
-        <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300 delay-200 cursor-pointer" onclick="openModal(this.querySelector('img').src)">
-            <img src="a3.jpg" alt="Work 3" class="w-full h-full object-cover">
-        </div>
-
-        <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
-    <span class="absolute top-5 right-5 text-white text-4xl">&times;</span>
-    <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300 scale-95">
-</div>
-
-    </div>
-</div>
-
-<div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
-    <span class="absolute top-5 right-5 text-white text-4xl">&times;</span>
-    <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300 scale-95">
-</div>
-
-    </div>
-</div>
+            <div class="animate-fade-in-up opacity-0 delay-3">
+                <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 px-1">הצצה לעבודות</h3>
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+                        <img src="a1.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+                        <img src="a2.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="aspect-square rounded-xl border border-white/80 shadow-md overflow-hidden cursor-pointer transform hover:scale-105 transition" onclick="openModal(this.querySelector('img').src)">
+                        <img src="a3.jpg" class="w-full h-full object-cover">
+                    </div>
+                </div>
             </div>
 
-            <footer class="mt-16 pt-6 border-t border-white/30 text-center animate-fade-in-up opacity-0 delay-3">
-                <p class="text-[10px] text-gray-400 tracking-widest uppercase font-light">כל הזכויות שמורות ל- <span class="font-bold text-gray-500">טל גזית</span></p>
+            <footer class="mt-16 text-center animate-fade-in-up opacity-0 delay-3">
+                <p class="text-[10px] text-gray-400 tracking-widest uppercase">Created with ❤️ by <span class="font-bold text-gray-500">Tal Digital</span></p>
             </footer>
+        </div>
+    </div>
 
-        </div> </div> </body>
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
+        <span class="absolute top-5 right-5 text-white text-4xl">&times;</span>
+        <img id="modalImage" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300 scale-95">
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.remove('hidden');
+            modalImg.src = src;
+            setTimeout(() => {
+                modalImg.classList.remove('scale-95');
+                modalImg.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.classList.remove('scale-100');
+            modalImg.classList.add('scale-95');
+            setTimeout(() => { modal.classList.add('hidden'); }, 200);
+        }
+    </script>
+</body>
 </html>
