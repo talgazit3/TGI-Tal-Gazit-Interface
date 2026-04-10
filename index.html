@@ -3,132 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Labs | High-End Digital Solutions</title>
+    <title>TGI Digital | Next-Gen Web Solutions</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Assistant', 'sans-serif'] },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'blob': 'blob 10s infinite',
-                    },
-                    keyframes: {
-                        fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-                        blob: {
-                            '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(40px, -60px) scale(1.1)' },
-                            '66%': { transform: 'translate(-30px, 30px) scale(0.9)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
     <style>
-        body { background-color: #fdfdfd; overflow-x: hidden; }
+        body { background-color: #fdfdfd; scroll-behavior: smooth; }
         .glass-panel {
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
-        .nav-btn.active { background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); color: black; font-weight: 700; }
+        .section-fade { animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .hide { display: none !important; }
+        .btn-black { background: #000; color: #fff; transition: all 0.3s ease; }
+        .btn-black:hover { background: #333; transform: translateY(-2px); }
     </style>
 </head>
-<body class="text-gray-900 antialiased">
+<body class="text-gray-900 antialiased font-sans">
 
     <div class="fixed inset-0 -z-10">
-        <div class="absolute top-0 -left-10 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-50 rounded-full filter blur-3xl opacity-40"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-50 rounded-full filter blur-3xl opacity-40"></div>
     </div>
 
-    <div class="min-h-screen flex flex-col items-center py-10 px-4">
-        
-        <nav class="glass-panel mb-8 p-1.5 rounded-2xl flex gap-1 w-full max-w-[300px] shadow-sm">
-            <button onclick="showPage('home')" id="btn-home" class="nav-btn active flex-1 py-2 text-sm rounded-xl transition-all">בית</button>
-            <button onclick="showPage('about')" id="btn-about" class="nav-btn flex-1 py-2 text-sm rounded-xl transition-all text-gray-500">מי אני</button>
-        </nav>
+    <nav class="sticky top-4 z-40 flex justify-center px-4">
+        <div class="glass-panel p-2 rounded-2xl flex gap-2 shadow-lg max-w-sm w-full">
+            <button onclick="scrollToId('home')" class="flex-1 py-2 text-sm font-bold bg-white rounded-xl shadow-sm">בית</button>
+            <button onclick="scrollToId('about')" class="flex-1 py-2 text-sm text-gray-500">מי אני</button>
+            <button onclick="scrollToId('order')" class="flex-1 py-2 text-sm text-white bg-black rounded-xl">הזמן עכשיו</button>
+        </div>
+    </nav>
 
-        <main id="page-home" class="w-full max-w-md animate-fade-in">
-            <div class="glass-panel rounded-[2.5rem] p-8 shadow-xl">
-                <header class="text-center mb-10">
-                    <div class="text-5xl mb-4 text-center justify-center flex">💎</div>
-                    <h1 class="text-4xl font-extrabold tracking-tighter">Minimalist<span class="font-thin text-gray-400">Labs</span></h1>
-                    <p class="text-gray-500 mt-2 font-light">בניית אתרים נקיים ומאובטחים</p>
-                </header>
+    <div class="max-w-2xl mx-auto px-6 py-12 space-y-24">
 
-                <div class="space-y-4">
-                    <a href="https://wa.me/972500000000" target="_blank" class="flex items-center justify-between p-6 bg-black text-white rounded-3xl hover:opacity-90 transition">
-                        <span class="font-bold text-lg">הזמנת אתר עכשיו</span>
-                        <span class="text-xl">→</span>
-                    </a>
+        <section id="home" class="text-center space-y-6 section-fade">
+            <div class="text-6xl mb-4 inline-block animate-bounce">💎</div>
+            <h1 class="text-5xl font-extrabold tracking-tighter">TGI <span class="font-light text-gray-400">Digital</span></h1>
+            <p class="text-xl text-gray-600 font-light max-w-lg mx-auto leading-relaxed text-balance">
+                High-Performance Code. <br>
+                <span class="font-bold text-black italic">Next-Gen Architecture.</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 pt-4">
+                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">React Native</span>
+                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">Node.js</span>
+                <span class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-xs font-semibold shadow-sm">Clean UI</span>
+            </div>
+        </section>
+
+        <section id="about" class="glass-panel rounded-[3rem] p-10 shadow-xl space-y-6">
+            <h2 class="text-3xl font-extrabold">קצת עלי</h2>
+            <p class="text-gray-600 leading-relaxed text-lg">
+                אני טל, בן 15, מפתח <span class="text-black font-semibold italic">Full-Stack</span> שחי ונושם קוד. 
+                בניגוד למערכות אוטומטיות, אני כותב <span class="underline">Custom Code</span> מאפס כדי להבטיח אתר מהיר, מאובטח ומותאם אישית.
+            </p>
+            <div class="bg-black/5 p-6 rounded-3xl border border-black/5">
+                <h4 class="font-bold mb-2">📍 הטבה לתושבי האיזור</h4>
+                <p class="text-sm text-gray-600">
+                    תושבי <strong>אלוני אבא, בית לחם הגלילית והסביבה?</strong> אני מאמין בקהילה. אתם מקבלים ליווי אישי עד הבית ומחיר מיוחד של שכנים.
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-extrabold text-center">למי זה מתאים?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="glass-panel p-6 rounded-3xl border-r-4 border-black">
+                    <span class="text-2xl">📸</span>
+                    <h4 class="font-bold mt-3">פורטפוליו ויוצרים</h4>
+                    <p class="text-xs text-gray-400 mt-1 italic">Showcase your work with style.</p>
                 </div>
-
-                <div class="mt-10">
-                    <h3 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">פרויקטים נבחרים</h3>
-                    <div class="grid grid-cols-3 gap-3">
-                        <img src="a1.jpg" onclick="openModal(this.src)" class="aspect-square rounded-2xl object-cover cursor-pointer hover:scale-105 transition border border-white/50">
-                        <img src="a2.jpg" onclick="openModal(this.src)" class="aspect-square rounded-2xl object-cover cursor-pointer hover:scale-105 transition border border-white/50">
-                        <img src="a3.jpg" onclick="openModal(this.src)" class="aspect-square rounded-2xl object-cover cursor-pointer hover:scale-105 transition border border-white/50">
-                    </div>
+                <div class="glass-panel p-6 rounded-3xl border-r-4 border-gray-300">
+                    <span class="text-2xl">🏬</span>
+                    <h4 class="font-bold mt-3">עסקים ונותני שירות</h4>
+                    <p class="text-xs text-gray-400 mt-1 italic">Scalable digital presence.</p>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <main id="page-about" class="w-full max-w-md animate-fade-in hide">
-            <div class="glass-panel rounded-[2.5rem] p-8 shadow-xl">
-                <h2 class="text-3xl font-extrabold mb-4">היי, אני טל.</h2>
-                <p class="text-gray-600 leading-relaxed">מפתח Full-Stack המתמחה בעיצובים נקיים וביצועים גבוהים. כל אתר נבנה בקוד אישי כדי להבטיח אבטחה מקסימלית וחווית משתמש מושלמת.</p>
+        <section id="order" class="glass-panel rounded-[3rem] p-10 shadow-2xl border-t-8 border-black">
+            <h2 class="text-3xl font-extrabold mb-2 text-center">הזמנת פרויקט</h2>
+            <p class="text-center text-gray-400 text-sm mb-8 italic">Ready to build something great?</p>
+            
+            <form id="orderForm" class="space-y-4 text-right">
+                <div class="grid grid-cols-2 gap-4 text-right">
+                    <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition">
+                    <input type="text" id="lastName" placeholder="שם משפחה" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition">
+                </div>
+                <input type="tel" id="phone" placeholder="מספר טלפון" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right">
+                <input type="email" id="email" placeholder="אימייל" required class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right">
+                <textarea id="project" placeholder="ספר לי קצת על האתר שאתה צריך..." rows="3" class="w-full p-4 rounded-2xl bg-white border border-gray-100 focus:ring-2 ring-black outline-none transition text-right"></textarea>
                 
-                <div class="grid grid-cols-2 gap-4 mt-8">
-                    <div class="p-4 bg-white/40 rounded-2xl border border-white">
-                        <span class="text-xl">🚀</span>
-                        <h4 class="font-bold text-sm mt-2">ביצועים</h4>
-                        <p class="text-xs text-gray-400">טעינה מהירה</p>
-                    </div>
-                    <div class="p-4 bg-white/40 rounded-2xl border border-white">
-                        <span class="text-xl">🛡️</span>
-                        <h4 class="font-bold text-sm mt-2">אבטחה</h4>
-                        <p class="text-xs text-gray-400">חסינות מלאה</p>
-                    </div>
-                </div>
+                <button type="submit" id="submitBtn" class="w-full py-5 btn-black rounded-2xl font-bold text-lg shadow-lg">שלח בקשה לדיסקורד</button>
+            </form>
+            <p id="successMsg" class="text-green-600 text-center mt-4 hide font-bold">✅ ההודעה נשלחה! אצור קשר בהקדם.</p>
+        </section>
+
+        <section class="text-center space-y-6 pb-20">
+            <h3 class="font-bold text-gray-300 uppercase tracking-[0.3em] text-[10px]">Contact Info</h3>
+            <a href="tel:0584227408" class="text-4xl font-extrabold hover:text-gray-500 transition tracking-tighter block">058-422-7408</a>
+            <div class="flex justify-center gap-8">
+                <a href="https://wa.me/972584227408" target="_blank" class="text-sm font-semibold hover:underline">WhatsApp</a>
+                <span class="text-gray-200">|</span>
+                <p class="text-sm text-gray-400 italic font-light">TGI Digital Hub</p>
             </div>
-        </main>
+        </section>
 
-        <p class="mt-8 text-[10px] text-gray-300 tracking-widest uppercase">Minimalist Labs © 2026</p>
-    </div>
-
-    <div id="imageModal" class="fixed inset-0 z-50 hide bg-black/90 backdrop-blur-md flex items-center justify-center p-6" onclick="closeModal()">
-        <img id="modalImage" class="max-w-full max-h-full rounded-2xl">
     </div>
 
     <script>
-        function showPage(pageId) {
-            document.getElementById('page-home').classList.add('hide');
-            document.getElementById('page-about').classList.add('hide');
-            document.getElementById('btn-home').classList.remove('active');
-            document.getElementById('btn-about').classList.remove('active');
-
-            document.getElementById('page-' + pageId).classList.remove('hide');
-            document.getElementById('btn-' + pageId).classList.add('active');
+        function scrollToId(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        function openModal(src) {
-            const modal = document.getElementById('imageModal');
-            document.getElementById('modalImage').src = src;
-            modal.classList.remove('hide');
-        }
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
 
-        function closeModal() {
-            document.getElementById('imageModal').classList.add('hide');
-        }
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "...שולח";
+            btn.disabled = true;
+            
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                project: document.getElementById('project').value
+            };
+
+            const discordMessage = {
+                embeds: [{
+                    title: "🚀 הזמנה חדשה ב-TGI Digital!",
+                    color: 0,
+                    fields: [
+                        { name: "שם מלא", value: `${formData.firstName} ${formData.lastName}`, inline: true },
+                        { name: "טלפון", value: formData.phone, inline: true },
+                        { name: "אימייל", value: formData.email },
+                        { name: "תיאור הפרויקט", value: formData.project || "לא צוין" }
+                    ],
+                    footer: { text: "נשלח מהאתר הרשמי" },
+                    timestamp: new Date()
+                }]
+            };
+
+            try {
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(discordMessage)
+                });
+
+                if (response.ok) {
+                    document.getElementById('successMsg').classList.remove('hide');
+                    document.getElementById('orderForm').reset();
+                } else {
+                    alert('שגיאה בשליחה. נסה שוב או התקשר אלי.');
+                }
+            } catch (err) {
+                alert('תקלה בחיבור. וודא שיש לך אינטרנט.');
+            } finally {
+                btn.innerText = "שלח בקשה לדיסקורד";
+                btn.disabled = false;
+            }
+        });
     </script>
 </body>
 </html>
