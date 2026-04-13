@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TGI Digital | Premium Web Solutions</title>
+    <title>TGI webs | Premium Web Solutions</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
         .blob { filter: blur(60px); position: fixed; z-index: -1; opacity: 0.4; }
         .service-card { transition: all 0.3s ease; }
         .service-card:hover { transform: translateY(-5px); }
+        .hide { display: none; }
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
@@ -24,7 +25,7 @@
 
     <nav class="fixed top-0 w-full z-50 px-6 py-4">
         <div class="max-w-6xl mx-auto glass rounded-2xl p-3 flex justify-between items-center shadow-sm">
-            <div class="text-2xl font-extrabold tracking-tighter px-4 italic">TGI DIGITAL</div>
+            <div class="text-2xl font-extrabold tracking-tighter px-4 italic">TGI <span class="font-light text-gray-400">webs</span></div>
             <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
                 <a href="#about" class="hover:text-black transition">About</a>
                 <a href="#for-who" class="hover:text-black transition">For Who</a>
@@ -38,10 +39,10 @@
     <section class="pt-48 pb-24 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-tight mb-8">
-                הגיע הזמן לאתר <br> שבאמת עובד.
+                TGI webs. <br> הגיע הזמן לאתר שבאמת עובד.
             </h1>
             <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl mx-auto mb-12">
-                אני טל, בן 15. מפתח מערכות ב-Custom Code שמביא את הטכנולוגיה הכי חדשנית לעסק שלכם.
+                אני טל, מפתח מערכות ב-Custom Code שמביא Interface & Innovation לעסק שלכם עם הטכנולוגיה הכי חדשנית בשוק.
             </p>
             <div class="flex justify-center gap-4 font-bold">
                 <a href="#order" class="bg-black text-white px-10 py-5 rounded-2xl shadow-2xl hover:bg-gray-800 transition">התחל פרויקט</a>
@@ -159,7 +160,7 @@
     </section>
 
     <footer class="py-20 text-center text-gray-400 text-[10px] uppercase tracking-[0.5em]">
-        TGI Digital Hub • Built by Tal • Aloney Abba
+        TGI webs • Interface & Innovation • Aloney Abba
     </footer>
 
     <script>
@@ -173,7 +174,7 @@
 
             const discordMessage = {
                 embeds: [{
-                    title: "🚀 פנייה חדשה מאתר TGI DIGITAL",
+                    title: "🚀 פנייה חדשה מאתר TGI webs",
                     color: 0,
                     fields: [
                         { name: "לקוח", value: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`, inline: true },
