@@ -13,8 +13,8 @@
         .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.4); }
         .text-gradient { background: linear-gradient(to right, #000000, #4b5563); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .blob { filter: blur(60px); position: fixed; z-index: -1; opacity: 0.4; }
-        .service-card { transition: all 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); }
+        .price-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(0,0,0,0.05); }
+        .price-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); border-color: rgba(0,0,0,0.1); }
         .hide { display: none; }
     </style>
 </head>
@@ -28,7 +28,7 @@
             <div class="text-2xl font-extrabold tracking-tighter px-4 italic">TGI <span class="font-light text-gray-400">webs</span></div>
             <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
                 <a href="#about" class="hover:text-black transition">About</a>
-                <a href="#for-who" class="hover:text-black transition">For Who</a>
+                <a href="#pricing" class="hover:text-black transition">Pricing</a>
                 <a href="#dictionary" class="hover:text-black transition">Tech Guide</a>
                 <a href="#order" class="hover:text-black transition">Contact</a>
             </div>
@@ -51,28 +51,64 @@
                 אני טל, מפתח מערכות ב-Custom Code שמביא Interface & Innovation לעסק שלכם עם הטכנולוגיה הכי חדשנית בשוק.
             </p>
             <div class="flex justify-center gap-4 font-bold">
-                <a href="#order" class="bg-black text-white px-10 py-5 rounded-2xl shadow-2xl hover:bg-gray-800 transition">התחל פרויקט</a>
-                <a href="#for-who" class="bg-white border border-gray-200 px-10 py-5 rounded-2xl hover:bg-gray-50 transition">למי זה מתאים?</a>
+                <a href="#pricing" class="bg-black text-white px-10 py-5 rounded-2xl shadow-2xl hover:bg-gray-800 transition">צפה בחבילות</a>
+                <a href="#order" class="bg-white border border-gray-200 px-10 py-5 rounded-2xl hover:bg-gray-50 transition">התחל פרויקט</a>
             </div>
         </div>
     </section>
 
-    <section id="for-who" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto text-right space-y-12">
-            <div class="border-r-4 border-black pr-6">
-                <h2 class="text-4xl font-extrabold mb-4">למי השירות מיועד?</h2>
-                <p class="text-xl text-gray-500 italic font-light leading-relaxed">
-                    לבעלי עסקים שיש להם <strong>אתר מיושן</strong> שכבר לא מייצג אותם בכבוד, או לבעלי עסקים <strong>ללא אתר כלל</strong> שרוצים לפרסם את העסק שלהם בצורה הכי חדשנית, נקייה ומקצועית שיש כיום בשוק.
-                </p>
+    <section id="pricing" class="py-24 px-6 bg-white/50">
+        <div class="max-w-6xl mx-auto text-right">
+            <div class="mb-16 border-r-4 border-black pr-6">
+                <h2 class="text-4xl font-extrabold mb-2">חבילות פיתוח והשקה</h2>
+                <p class="text-xl text-gray-500 font-light italic">פתרונות טכנולוגיים מותאמים אישית לכל שלב בעסק</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-8 bg-gray-50 rounded-3xl">
-                    <h4 class="font-bold text-lg mb-2 underline">האתר שלכם ישן?</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">הגולשים של היום עוזבים אתר שלא נטען תוך שנייה או שלא נראה טוב בנייד. אני אהפוך את הנוכחות שלכם למודרנית ויוקרתית.</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="price-card p-10 rounded-[2.5rem] bg-white flex flex-col">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold">One Page Elite</h3>
+                        <p class="text-gray-400 text-sm font-light italic mt-1">דף נחיתה יוקרתי וממיר</p>
+                    </div>
+                    <div class="text-4xl font-black mb-8">₪1,800<span class="text-sm font-light text-gray-400 mr-2">/ פרויקט</span></div>
+                    <ul class="space-y-4 text-sm text-gray-600 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-right"><span>✔</span> <span>עיצוב Pixel Perfect מותאם לנייד</span></li>
+                        <li class="flex items-center gap-3"><span>✔</span> <span>אופטימיזציה מלאה למהירות טעינה</span></li>
+                        <li class="flex items-center gap-3"><span>✔</span> <span>חיבור לטופס לידים ו-WhatsApp</span></li>
+                        <li class="flex items-center gap-3 text-gray-300"><span>✕</span> <span>מערכת ניהול תוכן עצמאית</span></li>
+                    </ul>
+                    <a href="#order" class="block text-center py-4 rounded-xl border border-black font-bold hover:bg-black hover:text-white transition">בחר במסלול זה</a>
                 </div>
-                <div class="p-8 bg-gray-50 rounded-3xl">
-                    <h4 class="font-bold text-lg mb-2 underline">אין לכם אתר?</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">אל תסתפקו רק בדף פייסבוק. אתר רשמי ב-Custom Code נותן לעסק שלכם סמכות וגורם ללקוחות לסמוך עליכם מהרגע הראשון.</p>
+
+                <div class="price-card p-10 rounded-[2.5rem] bg-black text-white flex flex-col relative overflow-hidden">
+                    <div class="absolute top-4 left-4 bg-white text-black text-[10px] px-3 py-1 font-bold uppercase tracking-widest rounded-full">Most Popular</div>
+                    <div class="mb-8 mt-4">
+                        <h3 class="text-2xl font-bold">Business Pro</h3>
+                        <p class="text-gray-500 text-sm font-light italic mt-1">אתר תדמית עם ניהול תוכן</p>
+                    </div>
+                    <div class="text-4xl font-black mb-8">₪3,500<span class="text-sm font-light text-gray-500 mr-2">/ פרויקט</span></div>
+                    <ul class="space-y-4 text-sm text-gray-300 mb-10 flex-grow">
+                        <li class="flex items-center gap-3"><span>✔</span> <span>עד 5 דפים מעוצבים וממותגים</span></li>
+                        <li class="flex items-center gap-3 text-blue-400 font-bold"><span>✔</span> <span>מערכת ניהול תוכן (CMS) אישית</span></li>
+                        <li class="flex items-center gap-3"><span>✔</span> <span>אינטגרציה עם API (וואטסאפ/SMS)</span></li>
+                        <li class="flex items-center gap-3"><span>✔</span> <span>קידום SEO בסיסי להופעה בגוגל</span></li>
+                    </ul>
+                    <a href="#order" class="block text-center py-4 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition">התחל עכשיו</a>
+                </div>
+
+                <div class="price-card p-10 rounded-[2.5rem] bg-white flex flex-col border-dashed border-2">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold">Custom Systems</h3>
+                        <p class="text-gray-400 text-sm font-light italic mt-1">מערכות מורכבות וחנויות</p>
+                    </div>
+                    <div class="text-3xl font-black mb-8 italic">בהתאמה אישית</div>
+                    <ul class="space-y-4 text-sm text-gray-600 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 font-bold"><span>✔</span> <span>מערכת הזמנות (Booking)</span></li>
+                        <li class="flex items-center gap-3 font-bold"><span>✔</span> <span>חנויות E-commerce מלאות</span></li>
+                        <li class="flex items-center gap-3 font-bold"><span>✔</span> <span>אוטומציות עסקיות מתקדמות</span></li>
+                        <li class="flex items-center gap-3 font-bold"><span>✔</span> <span>פיתוח Full-Stack מאפס</span></li>
+                    </ul>
+                    <a href="#order" class="block text-center py-4 rounded-xl border border-black font-bold hover:bg-black hover:text-white transition">קבל הצעת מחיר</a>
                 </div>
             </div>
         </div>
