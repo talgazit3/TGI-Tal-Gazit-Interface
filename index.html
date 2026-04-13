@@ -16,20 +16,6 @@
         .service-card { transition: all 0.3s ease; }
         .service-card:hover { transform: translateY(-5px); }
         .hide { display: none; }
-
-        /* אפקט Hover חדשני למותג */
-        .brand-container:hover .brand-box {
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 20px 50px rgba(59, 130, 246, 0.2);
-            border-color: rgba(59, 130, 246, 0.4);
-            transform: scale(1.02);
-        }
-        .brand-container:hover .brand-i {
-            color: #3b82f6;
-            -webkit-text-fill-color: #3b82f6;
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
-        }
-        .brand-box { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
@@ -50,24 +36,20 @@
         </div>
     </nav>
 
-    <section class="pt-32 pb-24 px-6 brand-container">
-        <div class="max-w-6xl mx-auto text-center">
+    <section class="pt-48 pb-24 px-6">
+        <div class="max-w-5xl mx-auto text-center">
             
-            <div class="inline-block brand-box px-12 py-6 rounded-[3rem] border border-gray-100 bg-white/30 backdrop-blur-sm mb-12">
-                <h1 class="text-8xl md:text-[11rem] font-black tracking-tighter italic leading-none">
-                    <span class="text-gradient">TGI<span class="brand-i transition-all duration-500">i</span></span>
-                    <span class="block text-4xl md:text-5xl font-thin tracking-[0.3em] text-gray-300 uppercase mt-2">webs</span>
-                </h1>
+            <div class="text-7xl md:text-9xl font-black tracking-tighter text-gray-900 mb-10 italic">
+                TGI <span class="text-gray-800">webs</span>
             </div>
 
-            <h2 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-tight mb-8">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-tight mb-8">
                 משדרגים את העסק<br>לסטנדרט חדש
-            </h2>
+            </h1>
             
             <p class="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto mb-12">
                 אני טל, מפתח מערכות ב-Custom Code שמביא Interface & Innovation לעסק שלכם עם הטכנולוגיה הכי חדשנית בשוק.
             </p>
-            
             <div class="flex justify-center gap-4 font-bold">
                 <a href="#order" class="bg-black text-white px-10 py-5 rounded-2xl shadow-2xl hover:bg-gray-800 transition">התחל פרויקט</a>
                 <a href="#for-who" class="bg-white border border-gray-200 px-10 py-5 rounded-2xl hover:bg-gray-50 transition">למי זה מתאים?</a>
