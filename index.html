@@ -31,133 +31,120 @@
         <a href="tel:0584227408" class="bg-black text-white px-5 py-2 rounded-full text-xs font-bold">058-422-7408</a>
     </nav>
 
-    <section class="pt-40 pb-20 px-8 text-center bg-white">
+    <section class="pt-40 pb-20 px-4 md:px-8 text-center bg-white">
         <div class="text-6xl md:text-9xl font-black tracking-tighter text-gray-900 mb-8 italic">
             TGI <span class="text-gray-800 font-light">webs</span>
         </div>
         <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-[1.1] mb-8">
             משדרגים את העסק<br>לסטנדרט חדש
         </h1>
-        <p class="text-gray-400 text-lg md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
-            אני טל, בונה אתרים ומערכות בעיצוב נקי וחדשני. אני דואג שהעסק שלכם ייראה הכי מקצועי שיש, עם קוד מהיר וחוויית משתמש מושלמת.
+        <p class="text-gray-400 text-lg md:text-2xl font-light leading-relaxed max-w-2xl mx-auto mb-12 px-2">
+            אני טל, בונה אתרים ומערכות בעיצוב נקי וחדשני. אני דואג שהעסק שלכם ייראה הכי מקצועי שיש.
         </p>
         <div class="flex flex-col gap-4 max-w-xs mx-auto">
             <a href="#pricing" class="bg-black text-white py-5 rounded-2xl font-bold text-lg shadow-xl">צפה בחבילות ומחירים</a>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-400">By Tal Gazit • Established 2026</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-400">By Tal Gazit • 2026</p>
         </div>
     </section>
 
-    <section id="pricing" class="py-20 px-4 md:px-6 bg-gray-50/50">
-        <div class="max-w-md mx-auto text-right">
-            <div class="mb-10 pr-2 border-r-4 border-black">
+    <section id="pricing" class="py-20 px-2 md:px-6 bg-gray-50/50">
+        <div class="max-w-full md:max-w-md mx-auto text-right">
+            <div class="mb-10 pr-2 border-r-4 border-black mr-2">
                 <h2 class="text-3xl font-extrabold">חבילות ומחירים</h2>
-                <p class="text-gray-500 italic text-sm">כל מה שהעסק צריך כדי להצליח, במחיר הוגן</p>
-                <p class="text-[11px] text-gray-400 mt-2 font-bold">* הכל מותאם אישית לפי הצרכים שלכם.</p>
+                <p class="text-gray-500 italic text-sm">סטנדרט גבוה, מחיר הוגן</p>
             </div>
             
-            <div class="flex bg-white p-1.5 rounded-3xl mb-8 shadow-sm border border-gray-100">
-                <button onclick="openTab(event, 'basic')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl">דף נחיתה</button>
-                <button onclick="openTab(event, 'pro')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl active">אתר תדמית</button>
-                <button onclick="openTab(event, 'custom')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl">מערכת</button>
+            <div class="flex bg-white p-1.5 rounded-3xl mb-8 shadow-sm border border-gray-100 mx-2">
+                <button onclick="openTab(event, 'basic')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl">LITE</button>
+                <button onclick="openTab(event, 'pro')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl active">PRO</button>
+                <button onclick="openTab(event, 'custom')" class="nav-btn flex-1 py-4 text-xs font-black rounded-2xl">MAX</button>
             </div>
 
             <div id="basic" class="tab-content">
-                <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl mx-2">
                     <h3 class="text-2xl font-black mb-2 italic">דף נחיתה</h3>
-                    <p class="text-gray-400 text-sm mb-6 font-light italic">נוכחות דיגיטלית מהירה</p>
-                    <div class="flex items-end gap-2 mb-8 italic">
-                        <span class="text-4xl font-black">₪350</span>
-                        <span class="text-sm font-medium text-gray-300 line-through mb-1">₪700</span>
-                    </div>
+                    <div class="text-4xl font-black mb-8 italic">₪350</div>
                     <ul class="space-y-4 mb-10 text-gray-600 font-medium text-sm">
                         <li>✔ עיצוב יוקרתי בדף אחד</li>
                         <li>✔ מותאם מושלם לנייד</li>
                         <li>✔ כפתור מהיר לוואטסאפ</li>
-                        <li>✔ חיבור למערכת סטטיסטיקה</li>
                     </ul>
-                    <a href="#order" class="block text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm">אני רוצה כזה</a>
+                    <a href="#order" class="block text-center py-5 bg-gray-900 text-white rounded-2xl font-black">אני רוצה כזה</a>
                 </div>
             </div>
 
             <div id="pro" class="tab-content active">
-                <div class="bg-black text-white p-10 rounded-[3rem] premium-shadow relative overflow-hidden">
-                    <div class="absolute top-6 left-6 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
+                <div class="bg-black text-white p-8 rounded-[2.5rem] premium-shadow relative overflow-hidden mx-2">
                     <h3 class="text-2xl font-black mb-2 italic">אתר תדמית מלא</h3>
-                    <p class="text-gray-500 text-sm mb-6 font-light italic">הפתרון המושלם לצמיחה</p>
-                    <div class="flex items-end gap-2 mb-8 italic">
-                        <span class="text-5xl font-black">₪500</span>
-                        <span class="text-sm font-medium text-gray-600 line-through mb-1">₪1,000</span>
-                    </div>
+                    <div class="text-4xl font-black mb-8 italic text-blue-400">₪500</div>
                     <ul class="space-y-4 mb-10 text-gray-300 font-medium text-sm">
-                        <li>✔ עד 5 דפים מלאים ומעוצבים</li>
-                        <li>✔ מערכת לניהול תוכן עצמי</li>
-                        <li class="text-blue-400 font-bold">✔ דומיין עם שם העסק</li>
-                        <li>✔ תיבת מייל עסקית מקצועית</li>
-                        <li>✔ אופטימיזציה לקידום בגוגל</li>
+                        <li>✔ עד 5 דפים מעוצבים</li>
+                        <li>✔ מערכת לניהול תוכן</li>
+                        <li>✔ דומיין עם שם העסק</li>
+                        <li>✔ אופטימיזציה לגוגל</li>
                     </ul>
-                    <a href="#order" class="block text-center py-5 bg-white text-black rounded-2xl font-black text-sm transition transform hover:scale-105">הזמן עכשיו</a>
+                    <a href="#order" class="block text-center py-5 bg-white text-black rounded-2xl font-black transition transform active:scale-95">הזמן עכשיו</a>
                 </div>
             </div>
 
             <div id="custom" class="tab-content">
-                <div class="bg-white p-10 rounded-[3rem] border-2 border-dashed border-gray-200">
+                <div class="bg-white p-8 rounded-[2.5rem] border-2 border-dashed border-gray-200 mx-2">
                     <h3 class="text-2xl font-black mb-2 italic">מערכת מותאמת</h3>
-                    <p class="text-gray-400 text-sm mb-6 font-light">לצרכים מיוחדים ומורכבים</p>
-                    <div class="text-3xl font-black mb-8 italic uppercase">דברו איתי</div>
+                    <div class="text-3xl font-black mb-8 italic uppercase">Custom</div>
                     <ul class="space-y-4 mb-10 text-gray-600 font-medium text-sm">
-                        <li>✔ חנות אונליין מלאה (E-commerce)</li>
-                        <li>✔ מערכות לקביעת תורים וניהול</li>
-                        <li>✔ פיתוח אישי מאפס לפי דרישה</li>
+                        <li>✔ חנות אונליין מלאה</li>
+                        <li>✔ מערכות לקביעת תורים</li>
+                        <li>✔ פיתוח אישי מאפס</li>
                     </ul>
-                    <a href="#order" class="block text-center py-5 border-2 border-black rounded-2xl font-black text-sm">בואו נדבר בפרטי</a>
+                    <a href="#order" class="block text-center py-5 border-2 border-black rounded-2xl font-black">נדבר בפרטי</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 md:px-12 bg-black text-white rounded-[3.5rem] mx-2 md:mx-6 my-10 shadow-2xl">
+    <section class="py-16 px-4 md:px-12 bg-black text-white rounded-[2.5rem] mx-2 md:mx-6 my-10 shadow-2xl">
         <div class="max-w-5xl mx-auto text-right">
-            <h2 class="text-3xl font-black italic mb-16 text-center tracking-tight">הסטנדרט של TGI webs</h2>
+            <h2 class="text-2xl font-black italic mb-12 text-center tracking-tight uppercase">The Standard</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
-                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">חיבור למערכות</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">התראות מיידיות לוואטסאפ או ל-SMS על כל פנייה מהאתר. לעולם לא תפספסו לקוח.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border-r-2 border-blue-500 pr-4">
+                    <h3 class="text-lg font-extrabold text-blue-400 mb-2">חיבור למערכות</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">התראות מיידיות לוואטסאפ על כל פנייה. לעולם לא תפספסו לקוח.</p>
                 </div>
                 
-                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
-                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">ביצועים ומהירות</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">קוד נקי ואופטימיזציה שגורמים לאתר לטעון בשיא המהירות, לשיפור הדירוג בגוגל.</p>
+                <div class="border-r-2 border-blue-500 pr-4">
+                    <h3 class="text-lg font-extrabold text-blue-400 mb-2">ביצועים ומהירות</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">קוד נקי שגורם לאתר לטעון בשיא המהירות, לשיפור הדירוג בגוגל.</p>
                 </div>
                 
-                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
-                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">עצמאות מלאה</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">פאנל ניהול קל לשימוש המאפשר לכם לשנות טקסטים ותמונות בעצמכם ללא תלות במתכנת.</p>
+                <div class="border-r-2 border-blue-500 pr-4">
+                    <h3 class="text-lg font-extrabold text-blue-400 mb-2">עצמאות מלאה</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">פאנל ניהול קל לשימוש לשינוי טקסטים ותמונות בעצמכם.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="order" class="py-20 px-4 md:px-8">
-        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[3.5rem] text-right shadow-2xl border border-gray-50">
-            <h2 class="text-4xl font-black italic mb-2 tracking-tighter">LET'S START.</h2>
-            <p class="text-gray-400 mb-10 font-light text-sm">השאירו פרטים וטל יחזור אליכם בהקדם.</p>
+    <section id="order" class="py-16 px-2 md:px-8">
+        <div class="max-w-full md:max-w-2xl mx-auto bg-white p-6 md:p-12 rounded-[2.5rem] text-right shadow-2xl border border-gray-50 mx-2">
+            <h2 class="text-3xl font-black italic mb-1 tracking-tighter">LET'S START.</h2>
+            <p class="text-gray-400 mb-10 font-light text-xs uppercase tracking-widest">השאירו פרטים וטל יחזור אליכם</p>
             
-            <form id="orderForm" class="space-y-6">
+            <form id="orderForm" class="space-y-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right font-bold">
-                    <input type="text" id="lastName" placeholder="שם משפחה" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right font-bold">
+                    <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right font-bold text-sm">
+                    <input type="text" id="lastName" placeholder="שם משפחה" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right font-bold text-sm">
                 </div>
-                <input type="tel" id="phone" placeholder="מספר טלפון" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right font-bold">
-                <textarea id="project" placeholder="מה המטרה של האתר?" rows="4" class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right"></textarea>
-                <button type="submit" id="submitBtn" class="w-full py-5 bg-black text-white rounded-2xl font-black text-lg shadow-2xl active:scale-95 transition">שלח פנייה לטל</button>
+                <input type="tel" id="phone" placeholder="מספר טלפון" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right font-bold text-sm">
+                <textarea id="project" placeholder="מה המטרה של האתר?" rows="4" class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right text-sm"></textarea>
+                <button type="submit" id="submitBtn" class="w-full py-5 bg-black text-white rounded-2xl font-black text-lg shadow-xl active:scale-95 transition">שלח פנייה לטל</button>
             </form>
-            <div id="successMsg" class="hide mt-6 text-center text-green-600 font-black italic animate-pulse">נשלח בהצלחה! ניצור קשר בקרוב.</div>
+            <div id="successMsg" class="hide mt-6 text-center text-green-600 font-black italic text-sm animate-pulse">נשלח בהצלחה! ניצור קשר בקרוב.</div>
         </div>
     </section>
 
-    <footer class="py-16 text-center border-t border-gray-100">
-        <p class="text-[9px] text-gray-300 uppercase tracking-[0.6em]">TGI WEBS • TAL GAZIT • ALONEY ABBA</p>
+    <footer class="py-12 text-center">
+        <p class="text-[8px] text-gray-300 uppercase tracking-[0.6em]">TGI WEBS • TAL GAZIT • 2026</p>
     </footer>
 
     <script>
@@ -200,7 +187,7 @@
                     document.getElementById('successMsg').classList.remove('hide');
                     document.getElementById('orderForm').reset();
                 }
-            } catch (err) { alert('שגיאה בשליחה.'); }
+            } catch (err) { alert('Error.'); }
             finally { btn.innerText = "שלח פנייה לטל"; btn.disabled = false; }
         });
     </script>
