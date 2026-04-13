@@ -13,7 +13,6 @@
         .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .premium-shadow { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2); }
         
-        /* טאבים */
         .tab-content { display: none; animation: fadeIn 0.4s ease forwards; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -48,7 +47,7 @@
         </div>
     </section>
 
-    <section id="pricing" class="py-20 px-6 bg-gray-50/50">
+    <section id="pricing" class="py-20 px-4 md:px-6 bg-gray-50/50">
         <div class="max-w-md mx-auto text-right">
             <div class="mb-10 pr-2 border-r-4 border-black">
                 <h2 class="text-3xl font-extrabold">חבילות ומחירים</h2>
@@ -116,36 +115,36 @@
         </div>
     </section>
 
-    <section class="py-20 px-8 bg-black text-white rounded-[3.5rem] mx-4 my-10 shadow-2xl">
-        <div class="max-w-4xl mx-auto text-right">
-            <h2 class="text-3xl font-black italic mb-12 text-center">הסטנדרט של TGI webs</h2>
+    <section class="py-20 px-6 md:px-12 bg-black text-white rounded-[3.5rem] mx-2 md:mx-6 my-10 shadow-2xl">
+        <div class="max-w-5xl mx-auto text-right">
+            <h2 class="text-3xl font-black italic mb-16 text-center tracking-tight">הסטנדרט של TGI webs</h2>
             
-            <div class="space-y-12">
-                <div class="border-r-2 border-blue-500 pr-6">
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">חיבור למערכות</h3>
-                    <p class="text-gray-400 leading-relaxed">התראות מיידיות לוואטסאפ או ל-SMS על כל פנייה מהאתר. אתם לעולם לא תפספסו לקוח.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
+                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">חיבור למערכות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">התראות מיידיות לוואטסאפ או ל-SMS על כל פנייה מהאתר. לעולם לא תפספסו לקוח.</p>
                 </div>
                 
-                <div class="border-r-2 border-blue-500 pr-6">
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">ביצועים ומהירות</h3>
-                    <p class="text-gray-400 leading-relaxed">קוד נקי ואופטימיזציה של תמונות שגורמים לאתר לטעון בשיא המהירות, מה שמשפר את הדירוג בגוגל.</p>
+                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
+                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">ביצועים ומהירות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">קוד נקי ואופטימיזציה שגורמים לאתר לטעון בשיא המהירות, לשיפור הדירוג בגוגל.</p>
                 </div>
                 
-                <div class="border-r-2 border-blue-500 pr-6">
-                    <h3 class="text-xl font-bold text-blue-400 mb-2">עצמאות מלאה</h3>
-                    <p class="text-gray-400 leading-relaxed">אני בונה פאנל ניהול קל לשימוש המאפשר לכם לשנות טקסטים ותמונות בעצמכם ללא תלות במתכנת.</p>
+                <div class="border-r-2 border-blue-500 pr-6 flex flex-col justify-center min-h-[120px]">
+                    <h3 class="text-xl font-extrabold text-blue-400 mb-3">עצמאות מלאה</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">פאנל ניהול קל לשימוש המאפשר לכם לשנות טקסטים ותמונות בעצמכם ללא תלות במתכנת.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="order" class="py-20 px-8">
-        <div class="max-w-md mx-auto bg-white p-10 rounded-[3rem] text-right shadow-2xl border border-gray-50">
+    <section id="order" class="py-20 px-4 md:px-8">
+        <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[3.5rem] text-right shadow-2xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-2 tracking-tighter">LET'S START.</h2>
-            <p class="text-gray-400 mb-8 font-light text-sm">השאירו פרטים וטל יחזור אליכם בהקדם.</p>
+            <p class="text-gray-400 mb-10 font-light text-sm">השאירו פרטים וטל יחזור אליכם בהקדם.</p>
             
-            <form id="orderForm" class="space-y-4">
-                <div class="grid grid-cols-2 gap-4">
+            <form id="orderForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right font-bold">
                     <input type="text" id="lastName" placeholder="שם משפחה" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-2 focus:ring-black transition text-right font-bold">
                 </div>
