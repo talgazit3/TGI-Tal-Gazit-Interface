@@ -20,9 +20,28 @@
         .hide { display: none; }
         .q-card { border-right: 4px solid #3b82f6; transition: all 0.3s ease; }
         .q-card:hover { transform: translateX(-5px); }
+
+        /* Toast Notification Styles */
+        #toast {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #10b981;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 20px;
+            font-weight: 800;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #toast.show { top: 30px; }
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
+
+    <div id="toast">ההודעה נשלחה בהצלחה! ✅</div>
 
     <nav class="fixed top-0 w-full z-50 glass px-6 py-5 flex justify-between items-center">
         <div class="font-extrabold italic text-2xl tracking-tighter cursor-pointer" onclick="showPage('home')">TGI <span class="font-light text-gray-400 text-lg">webs</span></div>
@@ -74,31 +93,53 @@
     </main>
 
     <main id="pricingPage" class="page pt-32 pb-20 px-4">
-        <div class="max-w-2xl mx-auto text-right">
+        <div class="max-w-5xl mx-auto text-right">
             <h2 class="text-4xl font-black italic mb-2 border-r-4 border-black pr-4 uppercase">חבילות ומחירים</h2>
             <p class="text-gray-500 font-medium mb-10 text-sm mr-5 italic">* המחירים גמישים ומשתנים בהתאם למורכבות והדרישות שלכם.</p>
-            <div class="space-y-6">
-                <div class="bg-black text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-6 left-6 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
-                    <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase">אתר תדמית מלא</h3>
-                    <div class="text-5xl font-black text-blue-400 mb-8 italic">₪500</div>
-                    <ul class="space-y-4 mb-10 text-gray-300 text-sm font-medium">
-                        <li>✔ עד 5 דפים מלאים ומעוצבים</li>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-[3rem] border border-gray-100 shadow-xl flex flex-col">
+                    <h3 class="text-xl font-black mb-2 italic tracking-tighter">דף נחיתה בסיסי</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-black italic">₪349</span>
+                        <span class="text-gray-400 line-through text-lg font-bold">₪450</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-xs font-bold flex-grow">
+                        <li>✔ דף אחד ממוקד המרה</li>
+                        <li>✔ עיצוב מותאם אישית</li>
+                        <li>✔ חיבור לוואטסאפ</li>
+                    </ul>
+                    <button onclick="scrollToContact()" class="w-full py-4 bg-gray-100 rounded-2xl font-black text-xs hover:bg-black hover:text-white transition uppercase">לבחירה</button>
+                </div>
+
+                <div class="bg-black text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden flex flex-col">
+                    <div class="absolute top-6 left-6 bg-blue-500 text-white text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
+                    <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase">אתר תדמית פרימיום</h3>
+                    <div class="flex items-baseline gap-2 mb-8">
+                        <span class="text-5xl font-black italic text-blue-400">₪499</span>
+                        <span class="text-gray-500 line-through text-xl font-bold">₪750</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 text-gray-300 text-sm font-medium flex-grow">
+                        <li>✔ עד 5 דפים מלאים</li>
                         <li>✔ מערכת לניהול תוכן עצמי</li>
                         <li>✔ תיבת מייל עסקית מקצועית</li>
                         <li>✔ התאמה מלאה למובייל</li>
                     </ul>
-                    <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-white text-black rounded-2xl font-black text-sm uppercase transition transform active:scale-95">הזמן עכשיו</button>
+                    <button onclick="scrollToContact()" class="w-full py-5 bg-white text-black rounded-2xl font-black text-sm uppercase transition transform active:scale-95">הזמן עכשיו</button>
                 </div>
-                <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
-                    <h3 class="text-2xl font-black mb-2 italic tracking-tighter">דף נחיתה</h3>
-                    <div class="text-4xl font-black mb-8 italic tracking-tighter">₪350</div>
-                    <ul class="space-y-4 mb-10 text-gray-600 text-sm font-medium">
+
+                <div class="bg-white p-8 rounded-[3rem] border border-gray-100 shadow-xl flex flex-col">
+                    <h3 class="text-xl font-black mb-2 italic tracking-tighter">דף נחיתה משודרג</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-black italic">₪399</span>
+                        <span class="text-gray-400 line-through text-lg font-bold">₪550</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-gray-600 text-xs font-bold flex-grow">
                         <li>✔ עיצוב יוקרתי בדף אחד</li>
                         <li>✔ כפתור מהיר לוואטסאפ</li>
                         <li>✔ חיבור למערכת סטטיסטיקה</li>
                     </ul>
-                    <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm transition transform active:scale-95">אני רוצה כזה</button>
+                    <button onclick="scrollToContact()" class="w-full py-4 bg-gray-900 text-white rounded-2xl font-black text-xs hover:bg-black transition uppercase">לבחירה</button>
                 </div>
             </div>
         </div>
@@ -120,14 +161,12 @@
 
             <div class="mt-20">
                 <h3 class="text-2xl font-black mb-6 italic tracking-tight underline decoration-blue-500 underline-offset-8">שאלות שלכם</h3>
-                
                 <div id="questionsContainer" class="space-y-4 mb-10 max-h-[400px] overflow-y-auto p-2">
                     <p class="text-gray-400 text-center text-sm italic">טוען שאלות...</p>
                 </div>
 
                 <div class="text-center">
                     <button id="toggleQuestionBtn" onclick="document.getElementById('questionFormWrapper').classList.remove('hide'); this.classList.add('hide')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm transition hover:bg-blue-700 active:scale-95">יש שאלה? ניתן לשאול כאן</button>
-                    
                     <div id="questionFormWrapper" class="hide bg-gray-50 p-6 md:p-8 rounded-3xl border border-gray-100 text-right">
                         <h4 class="text-xl font-black mb-6 italic">נשמח לענות על כל שאלה:</h4>
                         <form id="publicQuestionForm" class="space-y-4">
@@ -141,7 +180,6 @@
                     </div>
                 </div>
             </div>
-
             <button onclick="showPage('home')" class="mt-12 text-black font-black border-2 border-black px-8 py-3 rounded-2xl hover:bg-black hover:text-white transition uppercase text-xs">חזרה לדף הבית</button>
         </div>
     </main>
@@ -159,7 +197,6 @@
                 <textarea id="project" placeholder="מה המטרה של האתר?" rows="4" class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right font-medium"></textarea>
                 <button type="submit" id="submitBtn" class="w-full py-5 bg-black text-white rounded-2xl font-black text-lg shadow-2xl transition transform active:scale-95">שלח פנייה לטל</button>
             </form>
-            <div id="successMsg" class="hide mt-6 text-center text-green-600 font-black italic animate-pulse">נשלח בהצלחה! ניצור קשר בקרוב.</div>
         </div>
     </section>
 
@@ -186,13 +223,19 @@
         const db = getDatabase(app);
         const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
 
-        // טעינת שאלות מה-Database
+        // פונקציה להצגת טוסט הצלחה
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // טעינת שאלות
         const questionsRef = ref(db, 'public_questions');
         onValue(questionsRef, (snapshot) => {
             const container = document.getElementById('questionsContainer');
             container.innerHTML = '';
             const data = snapshot.val();
-            
             if (data) {
                 Object.keys(data).reverse().forEach(key => {
                     const q = data[key];
@@ -203,67 +246,57 @@
                             <span class="text-[10px] font-black text-blue-500 uppercase italic">שאלה מאת ${q.name}</span>
                         </div>
                         <p class="text-sm font-bold text-gray-800">${q.text}</p>
-                        ${q.answer ? `
-                            <div class="mt-3 pt-3 border-t border-gray-50">
-                                <span class="text-[10px] font-black text-gray-400 italic">תשובה מ-TGI:</span>
-                                <p class="text-sm text-gray-600 font-medium">${q.answer}</p>
-                            </div>
-                        ` : ''}
+                        ${q.answer ? `<div class="mt-3 pt-3 border-t border-gray-50"><span class="text-[10px] font-black text-gray-400 italic">תשובה מ-TGI:</span><p class="text-sm text-gray-600 font-medium">${q.answer}</p></div>` : ''}
                     `;
                     container.appendChild(div);
                 });
             } else {
-                container.innerHTML = '<p class="text-gray-400 text-center text-xs italic">אין עדיין שאלות. תהיו הראשונים לשאול!</p>';
+                container.innerHTML = '<p class="text-gray-400 text-center text-xs italic">אין עדיין שאלות.</p>';
             }
         });
 
-        // שליחת שאלה חדשה
+        // שליחת שאלה
         document.getElementById('publicQuestionForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('qSubmitBtn');
-            const originalBtnText = btn.innerText;
             btn.disabled = true; btn.innerText = "שולח...";
-
-            // יצירת מזהה ייחודי מראש
             const newQuestionRef = push(questionsRef);
             const questionId = newQuestionRef.key;
-
             const newQuestion = {
                 name: document.getElementById('qFirstName').value + ' ' + document.getElementById('qLastName').value,
                 text: document.getElementById('qText').value,
                 timestamp: Date.now(),
                 answer: ""
             };
-
             try {
-                // שמירה ב-Firebase עם ה-ID שנוצר
                 await set(newQuestionRef, newQuestion);
-
                 await fetch(DISCORD_WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        embeds: [{
-                            title: "❓ שאלה חדשה מהאתר",
-                            description: `**כדי לענות רשום:** \n \`שלח ${questionId} [התשובה שלך]\``,
-                            color: 3447003,
-                            fields: [
-                                { name: "שם", value: newQuestion.name, inline: true },
-                                { name: "השאלה", value: newQuestion.text }
-                            ]
-                        }]
-                    })
+                    body: JSON.stringify({ embeds: [{ title: "❓ שאלה חדשה", description: `**לענות:** \`שלח ${questionId} [תשובה]\``, color: 3447003, fields: [{ name: "שם", value: newQuestion.name }, { name: "שאלה", value: newQuestion.text }] }] })
                 });
                 document.getElementById('publicQuestionForm').reset();
                 document.getElementById('questionFormWrapper').classList.add('hide');
                 document.getElementById('toggleQuestionBtn').classList.remove('hide');
-                alert('השאלה נשלחה בהצלחה!');
-            } catch (err) {
-                console.error(err);
-                alert('שגיאה בשליחה.');
-            } finally {
-                btn.disabled = false; btn.innerText = originalBtnText;
-            }
+                showToast(); // במקום alert
+            } catch (err) { console.error(err); } finally { btn.disabled = false; btn.innerText = "שלח שאלה לאתר"; }
+        });
+
+        // שליחת טופס הזמנה
+        document.getElementById('orderForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "שולח..."; btn.disabled = true;
+            const discordMessage = {
+                embeds: [{ title: "🚀 פנייה חדשה", color: 0, fields: [{ name: "שם", value: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`, inline: true }, { name: "טלפון", value: document.getElementById('phone').value, inline: true }, { name: "תיאור", value: document.getElementById('project').value || "לא צוין" }], timestamp: new Date() }]
+            };
+            try {
+                const response = await fetch(DISCORD_WEBHOOK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(discordMessage) });
+                if (response.ok) {
+                    showToast(); // במקום alert
+                    document.getElementById('orderForm').reset();
+                }
+            } catch (err) { console.error(err); } finally { btn.innerText = "שלח פנייה לטל"; btn.disabled = false; }
         });
     </script>
 
@@ -278,49 +311,7 @@
             else backBtn.classList.remove('hide');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        function scrollToContact() {
-            document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        document.getElementById('orderForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            btn.innerText = "שולח..."; btn.disabled = true;
-            const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
-
-            const discordMessage = {
-                embeds: [{
-                    title: "🚀 פנייה חדשה מאתר TGI webs",
-                    color: 0,
-                    fields: [
-                        { name: "שם", value: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`, inline: true },
-                        { name: "טלפון", value: document.getElementById('phone').value, inline: true },
-                        { name: "תיאור", value: document.getElementById('project').value || "לא צוין" }
-                    ],
-                    timestamp: new Date()
-                }]
-            };
-
-            try {
-                const response = await fetch(DISCORD_WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(discordMessage)
-                });
-                if (response.ok) {
-                    document.getElementById('successMsg').classList.remove('hide');
-                    document.getElementById('orderForm').reset();
-                } else {
-                    alert('הייתה בעיה בשליחה לדיסקורד.');
-                }
-            } catch (err) { 
-                alert('שגיאה בחיבור לשירות השליחה.'); 
-            } finally { 
-                btn.innerText = "שלח פנייה לטל"; 
-                btn.disabled = false; 
-            }
-        });
+        function scrollToContact() { document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' }); }
     </script>
 </body>
 </html>
