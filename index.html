@@ -128,15 +128,15 @@
                 <div class="text-center">
                     <button id="toggleQuestionBtn" onclick="document.getElementById('questionFormWrapper').classList.remove('hide'); this.classList.add('hide')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm transition hover:bg-blue-700 active:scale-95">יש שאלה? ניתן לשאול כאן</button>
                     
-                    <div id="questionFormWrapper" class="hide bg-gray-50 p-6 rounded-3xl border border-gray-100 text-right">
-                        <h4 class="font-black mb-4 italic text-sm">נשמח לענות על כל שאלה:</h4>
-                        <form id="publicQuestionForm" class="space-y-3">
-                            <div class="grid grid-cols-2 gap-2">
-                                <input type="text" id="qFirstName" placeholder="שם פרטי" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
-                                <input type="text" id="qLastName" placeholder="שם משפחה" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                    <div id="questionFormWrapper" class="hide bg-gray-50 p-6 md:p-8 rounded-3xl border border-gray-100 text-right">
+                        <h4 class="text-xl font-black mb-6 italic">נשמח לענות על כל שאלה:</h4>
+                        <form id="publicQuestionForm" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" id="qFirstName" placeholder="שם פרטי" required class="w-full p-4 bg-white rounded-2xl text-lg outline-none border border-gray-100 focus:border-black font-bold">
+                                <input type="text" id="qLastName" placeholder="שם משפחה" required class="w-full p-4 bg-white rounded-2xl text-lg outline-none border border-gray-100 focus:border-black font-bold">
                             </div>
-                            <textarea id="qText" placeholder="מה השאלה שלך?" rows="3" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black"></textarea>
-                            <button type="submit" id="qSubmitBtn" class="w-full py-3 bg-blue-600 text-white rounded-xl font-black text-xs transition active:scale-95">שלח שאלה לאתר</button>
+                            <textarea id="qText" placeholder="מה השאלה שלך?" rows="4" required class="w-full p-4 bg-white rounded-2xl text-lg outline-none border border-gray-100 focus:border-black font-medium"></textarea>
+                            <button type="submit" id="qSubmitBtn" class="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-lg transition active:scale-95 shadow-lg">שלח שאלה לאתר</button>
                         </form>
                     </div>
                 </div>
