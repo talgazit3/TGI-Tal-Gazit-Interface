@@ -13,12 +13,13 @@
         .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .text-gradient { background: linear-gradient(to right, #000000, #4b5563); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* ניהול דפים וירטואליים */
         .page { display: none; animation: fadeIn 0.4s ease forwards; }
         .page.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .hide { display: none; }
+        .q-card { border-right: 4px solid #3b82f6; transition: all 0.3s ease; }
+        .q-card:hover { transform: translateX(-5px); }
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
@@ -48,7 +49,6 @@
                 <button onclick="showPage('process')" class="flex-1 py-4 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition">איך זה עובד?</button>
                 <button onclick="showPage('faq')" class="flex-1 py-4 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition">שאלות</button>
             </div>
-            
             <p class="text-[11px] font-bold uppercase tracking-widest text-gray-300">By Tal Gazit • Established 2026</p>
         </section>
 
@@ -77,7 +77,6 @@
         <div class="max-w-2xl mx-auto text-right">
             <h2 class="text-4xl font-black italic mb-2 border-r-4 border-black pr-4 uppercase">חבילות ומחירים</h2>
             <p class="text-gray-500 font-medium mb-10 text-sm mr-5 italic">* המחירים גמישים ומשתנים בהתאם למורכבות והדרישות שלכם.</p>
-            
             <div class="space-y-6">
                 <div class="bg-black text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
                     <div class="absolute top-6 left-6 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
@@ -91,7 +90,6 @@
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-white text-black rounded-2xl font-black text-sm uppercase transition transform active:scale-95">הזמן עכשיו</button>
                 </div>
-
                 <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
                     <h3 class="text-2xl font-black mb-2 italic tracking-tighter">דף נחיתה</h3>
                     <div class="text-4xl font-black mb-8 italic tracking-tighter">₪350</div>
@@ -102,41 +100,6 @@
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm transition transform active:scale-95">אני רוצה כזה</button>
                 </div>
-
-                <div class="bg-gray-50 p-10 rounded-[3rem] border border-dashed border-gray-300 shadow-sm">
-                    <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase">Custom Solution</h3>
-                    <div class="text-xl font-bold mb-8 text-gray-500 italic tracking-tighter">מחיר לפי פרויקט</div>
-                    <ul class="space-y-4 mb-10 text-gray-600 text-sm font-medium">
-                        <li>✔ מערכות מורכבות ופיתוח אישי</li>
-                        <li>✔ פתרונות יצירתיים לכל רעיון</li>
-                        <li>✔ ליווי טכני צמוד</li>
-                        <li>✔ תכנון אפיון ועיצוב מאפס</li>
-                    </ul>
-                    <button onclick="scrollToContact()" class="block w-full text-center py-5 border-2 border-black text-black rounded-2xl font-black text-sm transition hover:bg-black hover:text-white transform active:scale-95">בואו נדבר על זה</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <main id="processPage" class="page pt-32 pb-20 px-4">
-        <div class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
-            <h2 class="text-4xl font-black italic mb-12 border-r-4 border-blue-500 pr-4 uppercase tracking-tighter">איך זה עובד?</h2>
-            <div class="space-y-12">
-                <div class="relative">
-                    <span class="text-5xl font-black text-gray-50 italic block mb-2">01</span>
-                    <h3 class="text-xl font-bold mb-2 italic">אפיון וקונספט</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">אנחנו מגדירים את המטרות שלכם ובונים את השפה העיצובית שתייצג אתכם הכי טוב.</p>
-                </div>
-                <div class="border-t border-gray-50 pt-8 relative">
-                    <span class="text-5xl font-black text-gray-50 italic block mb-2">02</span>
-                    <h3 class="text-xl font-bold mb-2 italic">עיצוב ופיתוח</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">אני בונה את האתר מאפס בדגש על מהירות מטורפת וחווית משתמש חלקה בסטנדרט הגבוה ביותר.</p>
-                </div>
-                <div class="border-t border-gray-50 pt-8 relative">
-                    <span class="text-5xl font-black text-gray-50 italic block mb-2">03</span>
-                    <h3 class="text-xl font-bold mb-2 italic">השקה וליווי</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">האתר עולה לאוויר! אתם מקבלים הדרכה קצרה איך לנהל את התוכן בעצמכם ויוצאים לדרך.</p>
-                </div>
             </div>
         </div>
     </main>
@@ -144,21 +107,39 @@
     <main id="faqPage" class="page pt-32 pb-20 px-4">
         <div class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-12 border-r-4 border-black pr-4 uppercase tracking-tighter">FAQ</h2>
-            <div class="space-y-8">
+            <div class="space-y-8 mb-16">
                 <div>
                     <h4 class="font-bold text-lg mb-2 italic text-blue-600">מי הבעלים של האתר?</h4>
                     <p class="text-gray-500 text-sm leading-relaxed font-medium">האתר שלכם ב-100%. בסיום העבודה אתם מקבלים את כל הגישות והבעלות המלאה על הקוד והתוכן.</p>
                 </div>
                 <div class="border-t border-gray-50 pt-6">
-                    <h4 class="font-bold text-lg mb-2 italic text-blue-600">מה קורה אם אני רוצה לעדכן טקסט בעתיד?</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed font-medium">בדיוק בשביל זה אני בונה פאנל ניהול. אתם יכולים לשנות טקסטים ותמונות בקלות ובצורה עצמאית לחלוטין.</p>
-                </div>
-                <div class="border-t border-gray-50 pt-6">
                     <h4 class="font-bold text-lg mb-2 italic text-blue-600">כמה זמן לוקח התהליך?</h4>
-                    <p class="text-gray-500 text-sm leading-relaxed font-medium">דף נחיתה לוקח כ-3 ימי עסקים. אתר תדמית מלא לוקח בין שבוע לשבועיים, תלוי במורכבות הפרויקט.</p>
+                    <p class="text-gray-500 text-sm leading-relaxed font-medium">דף נחיתה לוקח כ-3 ימי עסקים. אתר תדמית מלא לוקח בין שבוע לשבועיים.</p>
                 </div>
             </div>
-            <button onclick="showPage('home')" class="mt-12 text-black font-black border-2 border-black px-8 py-3 rounded-2xl hover:bg-black hover:text-white transition uppercase text-xs">הבנתי, תודה</button>
+
+            <div class="mt-20">
+                <h3 class="text-2xl font-black mb-6 italic tracking-tight underline decoration-blue-500 underline-offset-8">שאלות שלכם</h3>
+                
+                <div id="questionsContainer" class="space-y-4 mb-10 max-h-[400px] overflow-y-auto p-2">
+                    <p class="text-gray-400 text-center text-sm italic">טוען שאלות...</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100">
+                    <h4 class="font-black mb-4 italic text-sm">יש לך שאלה? תשאל כאן:</h4>
+                    <form id="publicQuestionForm" class="space-y-3">
+                        <div class="grid grid-cols-2 gap-2">
+                            <input type="text" id="qFirstName" placeholder="שם פרטי" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                            <input type="text" id="qLastName" placeholder="שם משפחה" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                        </div>
+                        <input type="tel" id="qPhone" placeholder="מספר טלפון" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                        <textarea id="qText" placeholder="מה השאלה שלך?" rows="3" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black"></textarea>
+                        <button type="submit" id="qSubmitBtn" class="w-full py-3 bg-blue-600 text-white rounded-xl font-black text-xs transition active:scale-95">שלח שאלה לאתר</button>
+                    </form>
+                </div>
+            </div>
+
+            <button onclick="showPage('home')" class="mt-12 text-black font-black border-2 border-black px-8 py-3 rounded-2xl hover:bg-black hover:text-white transition uppercase text-xs">חזרה לדף הבית</button>
         </div>
     </main>
 
@@ -166,7 +147,6 @@
         <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[3.5rem] text-right shadow-2xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-2 tracking-tighter uppercase italic">.LET'S START</h2>
             <p class="text-gray-400 mb-10 font-light text-sm">השאירו פרטים וטל יחזור אליכם בהקדם.</p>
-            
             <form id="orderForm" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input type="text" id="firstName" placeholder="שם פרטי" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none ring-1 ring-gray-100 focus:ring-1 focus:ring-black transition text-right font-bold">
@@ -184,23 +164,113 @@
         <p class="text-[9px] text-gray-300 uppercase tracking-[0.6em] font-bold">TGI WEBS • TAL GAZIT • ALONEY ABBA</p>
     </footer>
 
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCJtxTy6xEfqVjyA87BN6tkEf7W5n4s8js",
+            authDomain: "tgi-webs.firebaseapp.com",
+            projectId: "tgi-webs",
+            storageBucket: "tgi-webs.firebasestorage.app",
+            messagingSenderId: "928320228572",
+            appId: "1:928320228572:web:193f04dabebab662ebb819",
+            measurementId: "G-MR0S9K2E1M",
+            databaseURL: "https://tgi-webs-default-rtdb.europe-west1.firebasedatabase.app" // וודא שזה ה-URL הנכון מהקונסול שלך
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
+
+        // טעינת שאלות מה-Database
+        const questionsRef = ref(db, 'public_questions');
+        onValue(questionsRef, (snapshot) => {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            const data = snapshot.val();
+            
+            if (data) {
+                Object.keys(data).reverse().forEach(key => {
+                    const q = data[key];
+                    const div = document.createElement('div');
+                    div.className = 'q-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50 text-right';
+                    div.innerHTML = `
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-[10px] font-black text-blue-500 uppercase italic">שאלה מאת ${q.name}</span>
+                        </div>
+                        <p class="text-sm font-bold text-gray-800">${q.text}</p>
+                        ${q.answer ? `
+                            <div class="mt-3 pt-3 border-t border-gray-50">
+                                <span class="text-[10px] font-black text-gray-400 italic">תשובה מ-TGI:</span>
+                                <p class="text-sm text-gray-600 font-medium">${q.answer}</p>
+                            </div>
+                        ` : ''}
+                    `;
+                    container.appendChild(div);
+                });
+            } else {
+                container.innerHTML = '<p class="text-gray-400 text-center text-xs italic">אין עדיין שאלות. תהיו הראשונים לשאול!</p>';
+            }
+        });
+
+        // שליחת שאלה חדשה
+        document.getElementById('publicQuestionForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('qSubmitBtn');
+            btn.disabled = true; btn.innerText = "שולח...";
+
+            const newQuestion = {
+                name: document.getElementById('qFirstName').value + ' ' + document.getElementById('qLastName').value,
+                phone: document.getElementById('qPhone').value,
+                text: document.getElementById('qText').value,
+                timestamp: Date.now(),
+                answer: ""
+            };
+
+            try {
+                // 1. שמירה ב-Firebase
+                await push(questionsRef, newQuestion);
+
+                // 2. שליחה לדיסקורד
+                await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        embeds: [{
+                            title: "❓ שאלה חדשה פורסמה באתר!",
+                            color: 3447003,
+                            fields: [
+                                { name: "שם", value: newQuestion.name, inline: true },
+                                { name: "טלפון", value: newQuestion.phone, inline: true },
+                                { name: "השאלה", value: newQuestion.text }
+                            ],
+                            footer: { text: "ניתן לענות דרך מסד הנתונים של Firebase" }
+                        }]
+                    })
+                });
+
+                document.getElementById('publicQuestionForm').reset();
+                alert('השאלה נשלחה ותופיע באתר בקרוב!');
+            } catch (err) {
+                console.error(err);
+                alert('שגיאה בשליחה.');
+            } finally {
+                btn.disabled = false; btn.innerText = "שלח שאלה לאתר";
+            }
+        });
+    </script>
+
     <script>
-        // פונקציית מעבר בין דפים (דפים וירטואליים)
+        // פונקציות ניווט כלליות
         function showPage(pageId) {
-            // הסתרת כל הדפים
             const pages = document.querySelectorAll('.page');
             pages.forEach(p => p.classList.remove('active'));
-
-            // הצגת הדף המבוקש
             const targetPage = document.getElementById(pageId + 'Page');
             if (targetPage) targetPage.classList.add('active');
-
-            // ניהול כפתור "חזור" ב-Header
             const backBtn = document.getElementById('backBtn');
             if (pageId === 'home') backBtn.classList.add('hide');
             else backBtn.classList.remove('hide');
-
-            // גלילה אוטומטית לראש הדף
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -208,13 +278,12 @@
             document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // הגדרת ה-Discord Webhook שלך
-        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
-        
+        // טופס לידים ראשי (Webhook המקורי שלך)
         document.getElementById('orderForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
             btn.innerText = "שולח..."; btn.disabled = true;
+            const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1492233287052300539/xWWACmwJ-r5jvK74akD-i9-6Em3398X-Sh-nV5IKPPRlq6j1GARdh7S1NJDEkbcXMyee';
 
             const discordMessage = {
                 embeds: [{
