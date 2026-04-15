@@ -96,7 +96,7 @@
                     <ul class="space-y-4 mb-10 text-gray-600 text-sm font-medium">
                         <li>✔ עיצוב יוקרתי בדף אחד</li>
                         <li>✔ כפתור מהיר לוואטסאפ</li>
-                        <li>✔ חיבור למ מערכת סטטיסטיקה</li>
+                        <li>✔ חיבור למערכת סטטיסטיקה</li>
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm transition transform active:scale-95">אני רוצה כזה</button>
                 </div>
@@ -224,6 +224,10 @@
             const originalBtnText = btn.innerText;
             btn.disabled = true; btn.innerText = "שולח...";
 
+            // יצירת מזהה ייחודי מראש
+            const newQuestionRef = push(questionsRef);
+            const questionId = newQuestionRef.key;
+
             const newQuestion = {
                 name: document.getElementById('qFirstName').value + ' ' + document.getElementById('qLastName').value,
                 text: document.getElementById('qText').value,
@@ -232,13 +236,16 @@
             };
 
             try {
-                await push(questionsRef, newQuestion);
+                // שמירה ב-Firebase עם ה-ID שנוצר
+                await set(newQuestionRef, newQuestion);
+
                 await fetch(DISCORD_WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         embeds: [{
                             title: "❓ שאלה חדשה מהאתר",
+                            description: `**כדי לענות רשום:** \n \`שלח ${questionId} [התשובה שלך]\``,
                             color: 3447003,
                             fields: [
                                 { name: "שם", value: newQuestion.name, inline: true },
