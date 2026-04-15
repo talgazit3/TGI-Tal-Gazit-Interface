@@ -21,7 +21,6 @@
         .q-card { border-right: 4px solid #3b82f6; transition: all 0.3s ease; }
         .q-card:hover { transform: translateX(-5px); }
 
-        /* Toast Notification */
         #toast {
             position: fixed;
             top: -100px;
@@ -38,6 +37,9 @@
             white-space: nowrap;
         }
         #toast.show { top: 30px; }
+
+        .target-card { transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.03); }
+        .target-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #000; }
     </style>
 </head>
 <body class="text-gray-900 overflow-x-hidden">
@@ -69,7 +71,87 @@
                 <button onclick="showPage('process')" class="flex-1 py-4 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition">איך זה עובד?</button>
                 <button onclick="showPage('faq')" class="flex-1 py-4 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition">שאלות</button>
             </div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-300">By Tal Gazit • Established 2026</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-gray-300 mb-10">By Tal Gazit • Established 2026</p>
+        </section>
+
+        <section class="py-24 px-4 bg-[#f9f9f9]">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="text-blue-600 font-black text-xs uppercase tracking-widest">Target Audience</span>
+                    <h2 class="text-4xl md:text-6xl font-black mt-4 italic tracking-tighter uppercase">למי זה מתאים?</h2>
+                    <div class="w-20 h-1 bg-black mx-auto mt-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">01.</div>
+                        <h3 class="text-xl font-extrabold mb-3">עסקים קטנים</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">למי שרוצה להפסיק להסתמך רק על פייסבוק ואינסטגרם ולהתחיל להיראות מקצועי עם בית דיגיטלי משלו.</p>
+                    </div>
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">02.</div>
+                        <h3 class="text-xl font-extrabold mb-3">נותני שירות</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">מורים פרטיים, מאמני כושר או יועצים שצריכים דף נחיתה שיסגור להם לידים ולקוחות חדשים על אוטומט.</p>
+                    </div>
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">03.</div>
+                        <h3 class="text-xl font-extrabold mb-3">בעלי מקצוע</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">חשמלאים, שיפוצניקים או טכנאים שרוצים שהלקוח יראה תיק עבודות מרשים לפני שהוא מתקשר.</p>
+                    </div>
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">04.</div>
+                        <h3 class="text-xl font-extrabold mb-3">חנויות בוטיק</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">הצגת קטלוג מוצרים יוקרתי ומעוצב שגורם לכל מוצר להיראות כמו פריט אספנות.</p>
+                    </div>
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">05.</div>
+                        <h3 class="text-xl font-extrabold mb-3">סטארטאפים</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">בניית MVP מהיר או דף הסבר למשקיעים שנראה חד, נקי וטכנולוגי.</p>
+                    </div>
+                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                        <div class="text-3xl mb-4 text-blue-500 font-black italic">06.</div>
+                        <h3 class="text-xl font-extrabold mb-3">יוצרי תוכן</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">בלוגים, אתרי קורסים או תיקי עבודות אישיים שמרכזים את כל העשייה שלכם במקום אחד.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white border-y border-gray-50">
+            <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 md:gap-24 text-center">
+                <div>
+                    <div class="text-4xl font-black italic">100%</div>
+                    <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Custom Code</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black italic">3s</div>
+                    <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Avg. Loading</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-black italic">24/7</div>
+                    <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Support Access</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 px-4 md:px-12 bg-black text-white rounded-[3rem] mx-2 md:mx-6 my-10 shadow-2xl">
+            <div class="max-w-5xl mx-auto text-right">
+                <h2 class="text-3xl font-black italic mb-16 text-center tracking-tight text-white uppercase italic">הסטנדרט של TGI webs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="border-r-2 border-blue-500 pr-6">
+                        <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">חיבור למערכות</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">התראות מיידיות לוואטסאפ על כל פנייה מהאתר. לעולם לא תפספסו לקוח.</p>
+                    </div>
+                    <div class="border-r-2 border-blue-500 pr-6">
+                        <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">ביצועים ומהירות</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">קוד נקי ואופטימיזציה שגורמים לאתר לטעון בשיא המהירות.</p>
+                    </div>
+                    <div class="border-r-2 border-blue-500 pr-6">
+                        <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">עצמאות מלאה</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">פאנל ניהול קל לשימוש המאפשר לכם לשנות טקסטים ותמונות בעצמכם ללא תלות במתכנת.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -100,14 +182,11 @@
     <main id="faqPage" class="page pt-32 pb-20 px-4">
         <div class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-12 border-r-4 border-black pr-4 uppercase tracking-tighter">שאלות ותשובות</h2>
-            
             <div id="questionsContainer" class="space-y-4 mb-10 max-h-[400px] overflow-y-auto p-2">
                 <p class="text-gray-400 text-center text-sm italic">טוען שאלות...</p>
             </div>
-
             <div class="text-center">
                 <button id="toggleQuestionBtn" onclick="document.getElementById('questionFormWrapper').classList.remove('hide'); this.classList.add('hide')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm transition hover:bg-blue-700">יש שאלה? ניתן לשאול כאן</button>
-                
                 <div id="questionFormWrapper" class="hide bg-gray-50 p-6 rounded-3xl border border-gray-100 text-right">
                     <form id="publicQuestionForm" class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -137,6 +216,10 @@
             </form>
         </div>
     </section>
+
+    <footer class="py-16 text-center border-t border-gray-100">
+        <p class="text-[9px] text-gray-300 uppercase tracking-[0.6em] font-bold">TGI WEBS • TAL GAZIT • ALONEY ABBA</p>
+    </footer>
 
     <script>
         function triggerToast() {
@@ -197,7 +280,6 @@
             };
             try {
                 await set(newQuestionRef, newQuestion);
-                // שליחה לדיסקורד
                 await fetch(DISCORD_WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
