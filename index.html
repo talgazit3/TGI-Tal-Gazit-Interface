@@ -163,11 +163,21 @@
             * המחירים המוצגים הם מחירי בסיס. העלות הסופית עשויה להשתנות בהתאם למורכבות הפרויקט, כמות הדפים והדרישות הספציפיות שלכם.
         </p>
 
-        <div class="space-y-6">
-            <div class="bg-black text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden border border-gray-800">
-                <div class="absolute top-6 left-6 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
-                <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase">אתר תדמית מלא</h3>
-                <div class="text-5xl font-black text-blue-400 mb-8 italic">₪500</div>
+        <div class="space-y-12">
+            <div class="relative bg-black text-white p-10 rounded-[3rem] shadow-2xl overflow-hidden border border-gray-800">
+                <div class="absolute top-8 left-8 opacity-20 pointer-events-none">
+                    <span class="text-5xl font-black italic">01</span>
+                    <div class="w-12 h-[2px] bg-white rotate-[130deg] mt-[-20px] ml-4"></div>
+                </div>
+
+                <div class="absolute top-6 right-10 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
+                <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase mt-4">אתר תדמית מלא</h3>
+                
+                <div class="flex items-end gap-3 mb-8 italic">
+                    <div class="text-5xl font-black text-blue-400">₪500</div>
+                    <div class="text-2xl font-bold text-gray-600 line-through decoration-red-500 decoration-2">₪850</div>
+                </div>
+
                 <ul class="space-y-4 mb-10 text-gray-300 text-sm font-medium">
                     <li>✔ עד 5 דפים מלאים ומעוצבים</li>
                     <li>✔ מערכת לניהול תוכן עצמי</li>
@@ -177,9 +187,19 @@
                 <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-white text-black rounded-2xl font-black text-sm uppercase transition hover:bg-gray-200">הזמן עכשיו</button>
             </div>
 
-            <div class="bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl">
-                <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase">דף נחיתה (One-Page)</h3>
-                <div class="text-4xl font-black mb-8 italic tracking-tighter">₪350</div>
+            <div class="relative bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl overflow-hidden">
+                <div class="absolute top-8 left-8 opacity-10 pointer-events-none">
+                    <span class="text-5xl font-black italic">02</span>
+                    <div class="w-12 h-[2px] bg-black rotate-[130deg] mt-[-20px] ml-4"></div>
+                </div>
+
+                <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase mt-4">דף נחיתה (One-Page)</h3>
+                
+                <div class="flex items-end gap-3 mb-8 italic">
+                    <div class="text-4xl font-black text-black">₪350</div>
+                    <div class="text-xl font-bold text-gray-300 line-through decoration-red-500 decoration-2">₪600</div>
+                </div>
+
                 <ul class="space-y-4 mb-10 text-gray-500 text-sm font-medium">
                     <li>✔ דף אחד ממוקד ומניע לפעולה</li>
                     <li>✔ עיצוב מותאם אישית למוצר/שירות</li>
@@ -189,8 +209,13 @@
                 <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm uppercase transition hover:bg-black">אני רוצה כזה</button>
             </div>
 
-            <div class="bg-gradient-to-br from-gray-50 to-white p-10 rounded-[3rem] border-2 border-dashed border-gray-200 shadow-sm">
-                <div class="flex justify-between items-start mb-4">
+            <div class="relative bg-gradient-to-br from-gray-50 to-white p-10 rounded-[3rem] border-2 border-dashed border-gray-200 shadow-sm overflow-hidden">
+                <div class="absolute top-8 left-8 opacity-10 pointer-events-none">
+                    <span class="text-5xl font-black italic text-blue-600">03</span>
+                    <div class="w-12 h-[2px] bg-blue-600 rotate-[130deg] mt-[-20px] ml-4"></div>
+                </div>
+
+                <div class="flex justify-between items-start mb-4 mt-4">
                     <h3 class="text-2xl font-black italic tracking-tighter uppercase">Special Projects</h3>
                     <span class="text-[10px] bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-bold uppercase">Creative</span>
                 </div>
