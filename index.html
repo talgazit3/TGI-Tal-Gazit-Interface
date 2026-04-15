@@ -96,7 +96,7 @@
                     <ul class="space-y-4 mb-10 text-gray-600 text-sm font-medium">
                         <li>✔ עיצוב יוקרתי בדף אחד</li>
                         <li>✔ כפתור מהיר לוואטסאפ</li>
-                        <li>✔ חיבור למערכת סטטיסטיקה</li>
+                        <li>✔ חיבור למ מערכת סטטיסטיקה</li>
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm transition transform active:scale-95">אני רוצה כזה</button>
                 </div>
@@ -125,17 +125,20 @@
                     <p class="text-gray-400 text-center text-sm italic">טוען שאלות...</p>
                 </div>
 
-                <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100">
-                    <h4 class="font-black mb-4 italic text-sm">יש לך שאלה? תשאל כאן:</h4>
-                    <form id="publicQuestionForm" class="space-y-3">
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="text" id="qFirstName" placeholder="שם פרטי" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
-                            <input type="text" id="qLastName" placeholder="שם משפחה" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
-                        </div>
-                        <input type="tel" id="qPhone" placeholder="מספר טלפון" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
-                        <textarea id="qText" placeholder="מה השאלה שלך?" rows="3" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black"></textarea>
-                        <button type="submit" id="qSubmitBtn" class="w-full py-3 bg-blue-600 text-white rounded-xl font-black text-xs transition active:scale-95">שלח שאלה לאתר</button>
-                    </form>
+                <div class="text-center">
+                    <button id="toggleQuestionBtn" onclick="document.getElementById('questionFormWrapper').classList.remove('hide'); this.classList.add('hide')" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-black text-sm transition hover:bg-blue-700 active:scale-95">יש שאלה? ניתן לשאול כאן</button>
+                    
+                    <div id="questionFormWrapper" class="hide bg-gray-50 p-6 rounded-3xl border border-gray-100 text-right">
+                        <h4 class="font-black mb-4 italic text-sm">נשמח לענות על כל שאלה:</h4>
+                        <form id="publicQuestionForm" class="space-y-3">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="text" id="qFirstName" placeholder="שם פרטי" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                                <input type="text" id="qLastName" placeholder="שם משפחה" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black">
+                            </div>
+                            <textarea id="qText" placeholder="מה השאלה שלך?" rows="3" required class="w-full p-3 bg-white rounded-xl text-xs outline-none border border-gray-100 focus:border-black"></textarea>
+                            <button type="submit" id="qSubmitBtn" class="w-full py-3 bg-blue-600 text-white rounded-xl font-black text-xs transition active:scale-95">שלח שאלה לאתר</button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -176,7 +179,7 @@
             messagingSenderId: "928320228572",
             appId: "1:928320228572:web:193f04dabebab662ebb819",
             measurementId: "G-MR0S9K2E1M",
-            databaseURL: "https://tgi-webs-default-rtdb.europe-west1.firebasedatabase.app" // וודא שזה ה-URL הנכון מהקונסול שלך
+            databaseURL: "https://tgi-webs-default-rtdb.europe-west1.firebasedatabase.app"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -218,51 +221,46 @@
         document.getElementById('publicQuestionForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('qSubmitBtn');
+            const originalBtnText = btn.innerText;
             btn.disabled = true; btn.innerText = "שולח...";
 
             const newQuestion = {
                 name: document.getElementById('qFirstName').value + ' ' + document.getElementById('qLastName').value,
-                phone: document.getElementById('qPhone').value,
                 text: document.getElementById('qText').value,
                 timestamp: Date.now(),
                 answer: ""
             };
 
             try {
-                // 1. שמירה ב-Firebase
                 await push(questionsRef, newQuestion);
-
-                // 2. שליחה לדיסקורד
                 await fetch(DISCORD_WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         embeds: [{
-                            title: "❓ שאלה חדשה פורסמה באתר!",
+                            title: "❓ שאלה חדשה מהאתר",
                             color: 3447003,
                             fields: [
                                 { name: "שם", value: newQuestion.name, inline: true },
-                                { name: "טלפון", value: newQuestion.phone, inline: true },
                                 { name: "השאלה", value: newQuestion.text }
-                            ],
-                            footer: { text: "ניתן לענות דרך מסד הנתונים של Firebase" }
+                            ]
                         }]
                     })
                 });
-
                 document.getElementById('publicQuestionForm').reset();
-                alert('השאלה נשלחה ותופיע באתר בקרוב!');
+                document.getElementById('questionFormWrapper').classList.add('hide');
+                document.getElementById('toggleQuestionBtn').classList.remove('hide');
+                alert('השאלה נשלחה בהצלחה!');
             } catch (err) {
                 console.error(err);
                 alert('שגיאה בשליחה.');
             } finally {
-                btn.disabled = false; btn.innerText = "שלח שאלה לאתר";
+                btn.disabled = false; btn.innerText = originalBtnText;
             }
         });
     </script>
 
     <script>
-        // פונקציות ניווט כלליות
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
             pages.forEach(p => p.classList.remove('active'));
@@ -278,7 +276,6 @@
             document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // טופס לידים ראשי (Webhook המקורי שלך)
         document.getElementById('orderForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = document.getElementById('submitBtn');
@@ -307,9 +304,15 @@
                 if (response.ok) {
                     document.getElementById('successMsg').classList.remove('hide');
                     document.getElementById('orderForm').reset();
+                } else {
+                    alert('הייתה בעיה בשליחה לדיסקורד.');
                 }
-            } catch (err) { alert('שגיאה בשליחה.'); }
-            finally { btn.innerText = "שלח פנייה לטל"; btn.disabled = false; }
+            } catch (err) { 
+                alert('שגיאה בחיבור לשירות השליחה.'); 
+            } finally { 
+                btn.innerText = "שלח פנייה לטל"; 
+                btn.disabled = false; 
+            }
         });
     </script>
 </body>
