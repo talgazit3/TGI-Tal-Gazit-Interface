@@ -7,6 +7,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         body { background-color: #fcfcfc; scroll-behavior: smooth; font-family: 'Assistant', sans-serif; }
@@ -20,6 +21,27 @@
         .hide { display: none; }
         .q-card { border-right: 4px solid #3b82f6; transition: all 0.3s ease; }
         .q-card:hover { transform: translateX(-5px); }
+
+        /* אפקט דופק למחיר הכחול */
+        @keyframes pricePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); text-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+            100% { transform: scale(1); }
+        }
+        .pulse-price { animation: pricePulse 2s infinite ease-in-out; display: inline-block; }
+
+        /* אנימציית ציפה חדשה לחבילות */
+        .pricing-card { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .pricing-card:hover { 
+            transform: translateY(-15px) scale(1.02); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+
+        /* אנימציה לסימני ה-V */
+        .pricing-card li { transition: all 0.3s ease; }
+        .pricing-card:hover li { transform: translateX(-5px); }
+        .pricing-card li span { display: inline-block; transition: transform 0.3s ease; }
+        .pricing-card:hover li span { transform: scale(1.2); color: #3b82f6; }
 
         #toast {
             position: fixed;
@@ -41,7 +63,6 @@
         .target-card { transition: all 0.3s ease; border: 1px solid rgba(0,0,0,0.03); }
         .target-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #000; }
 
-        /* מונע פס גלילה בכפתורים בנייד */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -64,17 +85,17 @@
 
     <main id="homePage" class="page active">
         <section class="pt-40 pb-20 px-4 md:px-8 text-center bg-white">
-            <div class="text-6xl md:text-9xl font-black tracking-tighter text-gray-900 mb-8 italic">
+            <div data-aos="zoom-out" class="text-6xl md:text-9xl font-black tracking-tighter text-gray-900 mb-8 italic">
                 TGI <span class="text-gray-800 font-light">webs</span>
             </div>
-            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-[1.1] mb-8">
+            <h1 data-aos="fade-up" data-aos-delay="200" class="text-5xl md:text-8xl font-extrabold tracking-tighter text-gradient leading-[1.1] mb-8">
                 משדרגים את העסק<br>לסטנדרט חדש
             </h1>
-            <p class="text-gray-700 text-xl md:text-3xl font-semibold leading-relaxed max-w-3xl mx-auto mb-12">
+            <p data-aos="fade-up" data-aos-delay="400" class="text-gray-700 text-xl md:text-3xl font-semibold leading-relaxed max-w-3xl mx-auto mb-12">
                 בניית אתרים ומערכות בעיצוב נקי וחדשני. אנחנו דואגים שהעסק שלכם ייראה הכי מקצועי שיש
             </p>
 
-            <div class="max-w-xl mx-auto bg-white p-2 rounded-[2rem] shadow-sm border border-gray-100 flex gap-2 justify-center mb-20 overflow-x-auto no-scrollbar">
+            <div data-aos="fade-up" data-aos-delay="600" class="max-w-xl mx-auto bg-white p-2 rounded-[2rem] shadow-sm border border-gray-100 flex gap-2 justify-center mb-20 overflow-x-auto no-scrollbar">
                 <button onclick="showPage('pricing')" class="flex-1 min-w-fit py-6 px-3 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition whitespace-nowrap">חבילות</button>
                 <button onclick="showPage('about')" class="flex-1 min-w-fit py-6 px-3 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition whitespace-nowrap">עלינו</button>
                 <button onclick="scrollToContact()" class="flex-1 min-w-fit py-6 px-3 text-sm font-black rounded-2xl bg-gray-50 hover:bg-black hover:text-white transition whitespace-nowrap">יצירת קשר</button>
@@ -86,39 +107,39 @@
 
         <section class="py-24 px-4 bg-[#f9f9f9]">
             <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-20">
+                <div class="text-center mb-20" data-aos="fade-down">
                     <span class="text-blue-600 font-black text-xs uppercase tracking-widest">Target Audience</span>
                     <h2 class="text-4xl md:text-6xl font-black mt-4 italic tracking-tighter uppercase">למי זה מתאים?</h2>
                     <div class="w-20 h-1 bg-black mx-auto mt-6"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">01.</div>
                         <h3 class="text-xl font-extrabold mb-3">עסקים קטנים</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">למי שרוצה להפסיק להסתמך רק על פייסבוק ואינסטגרם ולהתחיל להיראות מקצועי עם בית דיגיטלי משלו.</p>
                     </div>
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" data-aos-delay="100" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">02.</div>
                         <h3 class="text-xl font-extrabold mb-3">נותני שירות</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">מורים פרטיים, מאמני כושר או יועצים שצריכים דף נחיתה שיסגור להם לידים ולקוחות חדשים על אוטומט.</p>
                     </div>
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" data-aos-delay="200" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">03.</div>
                         <h3 class="text-xl font-extrabold mb-3">בעלי מקצוע</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">חשמלאים, שיפוצניקים או טכנאים שרוצים שהלקוח יראה תיק עבודות מרשים לפני שהוא מתקשר.</p>
                     </div>
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">04.</div>
                         <h3 class="text-xl font-extrabold mb-3">חנויות בוטיק</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">הצגת קטלוג מוצרים יוקרתי ומעוצב שגורם לכל מוצר להיראות כמו פריט אספנות.</p>
                     </div>
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" data-aos-delay="100" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">05.</div>
                         <h3 class="text-xl font-extrabold mb-3">מיתוג אישי</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">יצירת נוכחות דיגיטלית חזקה לאמנים, צלמים או פרילנסרים שרוצים להציג את העבודות שלהם בצורה יוקרתית שמשאירה רושם ראשוני בלתי נשכח.</p>
                     </div>
-                    <div class="target-card bg-white p-10 rounded-[2.5rem] text-right">
+                    <div data-aos="fade-up" data-aos-delay="200" class="target-card bg-white p-10 rounded-[2.5rem] text-right">
                         <div class="text-3xl mb-4 text-blue-500 font-black italic">06.</div>
                         <h3 class="text-xl font-extrabold mb-3">יוצרי תוכן</h3>
                         <p class="text-gray-500 text-sm leading-relaxed">בלוגים, אתרי קורסים או תיקי עבודות אישיים שמרכזים את כל העשייה שלכם במקום אחד.</p>
@@ -129,34 +150,34 @@
 
         <section class="py-20 bg-white border-y border-gray-50">
             <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 md:gap-24 text-center">
-                <div>
+                <div data-aos="zoom-in">
                     <div class="text-4xl font-black italic">100%</div>
                     <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Custom Code</div>
                 </div>
-                <div>
+                <div data-aos="zoom-in" data-aos-delay="150">
                     <div class="text-4xl font-black italic">3s</div>
                     <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Avg. Loading</div>
                 </div>
-                <div>
+                <div data-aos="zoom-in" data-aos-delay="300">
                     <div class="text-4xl font-black italic">24/7</div>
                     <div class="text-[10px] uppercase font-bold text-gray-400 mt-2 tracking-widest">Support Access</div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 px-4 md:px-12 bg-black text-white rounded-[3rem] mx-2 md:mx-6 my-10 shadow-2xl">
+        <section data-aos="fade-up" class="py-16 px-4 md:px-12 bg-black text-white rounded-[3rem] mx-2 md:mx-6 my-10 shadow-2xl">
             <div class="max-w-5xl mx-auto text-right">
                 <h2 class="text-3xl font-black italic mb-16 text-center tracking-tight text-white uppercase italic">הסטנדרט של TGI Webs</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="border-r-2 border-blue-500 pr-6">
+                    <div class="border-r-2 border-blue-500 pr-6" data-aos="fade-left">
                         <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">חיבור למערכות</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">התראות מיידיות לוואטסאפ על כל פנייה מהאתר. לעולם לא תפספסו לקוח.</p>
                     </div>
-                    <div class="border-r-2 border-blue-500 pr-6">
+                    <div class="border-r-2 border-blue-500 pr-6" data-aos="fade-left" data-aos-delay="200">
                         <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">ביצועים ומהירות</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">קוד נקי ואופטימיזציה שגורמים לאתר לטעון בשיא המהירות.</p>
                     </div>
-                    <div class="border-r-2 border-blue-500 pr-6">
+                    <div class="border-r-2 border-blue-500 pr-6" data-aos="fade-left" data-aos-delay="400">
                         <h3 class="text-xl font-extrabold text-blue-400 mb-3 italic">עצמאות מלאה</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">פאנל ניהול קל לשימוש המאפשר לכם לשנות טקסטים ותמונות בעצמכם ללא תלות במתכנת.</p>
                     </div>
@@ -174,29 +195,27 @@
             </p>
 
             <div class="space-y-12">
-                <div class="relative bg-black text-white p-10 rounded-[3rem] shadow-2xl overflow-hidden border border-gray-800">
+                <div data-aos="flip-left" class="pricing-card relative bg-black text-white p-10 rounded-[3rem] shadow-2xl overflow-hidden border border-gray-800">
                     <div class="absolute top-6 right-10 bg-white text-black text-[9px] px-3 py-1 font-black rounded-full uppercase italic">POPULAR</div>
                     <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase mt-4">אתר תדמית מלא</h3>
                     
                     <div class="flex items-end gap-3 mb-8 italic">
-                        <div class="text-5xl font-black text-blue-400">₪699</div>
+                        <div class="text-5xl font-black text-blue-400 pulse-price">₪699</div>
                         <div class="text-2xl font-bold text-gray-600 line-through decoration-red-500 decoration-2">₪999</div>
                     </div>
 
                     <ul class="space-y-4 mb-10 text-gray-300 text-sm font-medium">
-                        <li>✔ עד 5 דפים מלאים ומעוצבים</li>
-                        <li>✔ מערכת לניהול תוכן עצמי</li>
-                        <li>✔ רישום דומיין אישי לשנה ראשונה (.co.il / .com)</li>
-                         <li>✔ טופס לידים למייל (עד 200)</li>
-                        <li>✔ חיבור לרשתות חברתיות</li>
-                        <li>✔ מערכת תורים/שאלות</li>
-                       
-                        
+                        <li><span>✔</span> עד 5 דפים מלאים ומעוצבים</li>
+                        <li><span>✔</span> מערכת לניהול תוכן עצמי</li>
+                        <li><span>✔</span> רישום דומיין אישי לשנה ראשונה (.co.il / .com)</li>
+                         <li><span>✔</span> טופס לידים למייל (עד 200)</li>
+                        <li><span>✔</span> חיבור לרשתות חברתיות</li>
+                        <li><span>✔</span> מערכת תורים/שאלות</li>
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-white text-black rounded-2xl font-black text-sm uppercase transition hover:bg-gray-200">הזמן עכשיו</button>
                 </div>
 
-                <div class="relative bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl overflow-hidden">
+                <div data-aos="fade-up" class="pricing-card relative bg-white p-10 rounded-[3rem] border border-gray-100 shadow-xl overflow-hidden">
                     <h3 class="text-2xl font-black mb-2 italic tracking-tighter uppercase mt-4">דף נחיתה (One-Page)</h3>
                     
                     <div class="flex items-end gap-3 mb-8 italic">
@@ -205,15 +224,15 @@
                     </div>
 
                     <ul class="space-y-4 mb-10 text-gray-500 text-sm font-medium">
-                        <li>✔ דף אחד ממוקד</li>
-                        <li>✔ עיצוב מותאם אישית למוצר/שירות</li>
-                        <li>✔ התאמה מלאה לנייד</li>
-                        <li>✔ לחצן ליצירת קשר</li>
+                        <li><span>✔</span> דף אחד ממוקד</li>
+                        <li><span>✔</span> עיצוב מותאם אישית למוצר/שירות</li>
+                        <li><span>✔</span> התאמה מלאה לנייד</li>
+                        <li><span>✔</span> לחצן ליצירת קשר</li>
                     </ul>
                     <button onclick="scrollToContact()" class="block w-full text-center py-5 bg-gray-900 text-white rounded-2xl font-black text-sm uppercase transition hover:bg-black">אני רוצה כזה</button>
                 </div>
 
-                <div class="relative bg-gradient-to-br from-gray-50 to-white p-10 rounded-[3rem] border-2 border-dashed border-gray-200 shadow-sm overflow-hidden">
+                <div data-aos="fade-up" class="pricing-card relative bg-gradient-to-br from-gray-50 to-white p-10 rounded-[3rem] border-2 border-dashed border-gray-200 shadow-sm overflow-hidden">
                     <div class="flex justify-between items-start mb-4 mt-4">
                         <h3 class="text-2xl font-black italic tracking-tighter uppercase">פרוייקטים מיוחדים</h3>
                         <span class="text-[10px] bg-blue-100 text-blue-600 px-3 py-1 rounded-full font-bold uppercase">Creative</span>
@@ -234,7 +253,7 @@
     </main>
 
     <main id="aboutPage" class="page pt-32 pb-20 px-4">
-        <div class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
+        <div data-aos="zoom-in" class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-8 border-r-4 border-black pr-4 uppercase tracking-tighter">עלינו</h2>
             <div class="space-y-6 text-gray-700 font-semibold leading-relaxed">
                 <p>אני טל גזית. הקמתי את חברת TGI webs כדי להתאים לעסקים בדיוק את הדברים הבאים:</p>
@@ -246,7 +265,7 @@
     </main>
 
     <main id="faqPage" class="page pt-32 pb-20 px-4">
-        <div class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
+        <div data-aos="fade-up" class="max-w-2xl mx-auto text-right bg-white p-10 rounded-[3rem] shadow-xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-12 border-r-4 border-black pr-4 uppercase tracking-tighter">שאלות ותשובות</h2>
             <div id="questionsContainer" class="space-y-4 mb-10 max-h-[400px] overflow-y-auto p-2">
                 <p class="text-gray-400 text-center text-sm italic">טוען שאלות...</p>
@@ -268,7 +287,7 @@
         </div>
     </main>
 
-    <section id="contactSection" class="py-20 px-4">
+    <section id="contactSection" class="py-20 px-4" data-aos="fade-up">
         <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-[3.5rem] text-right shadow-2xl border border-gray-50">
             <h2 class="text-4xl font-black italic mb-10 tracking-tighter uppercase italic">.LET'S START</h2>
             <form id="orderForm" class="space-y-6">
@@ -278,7 +297,7 @@
                 </div>
                 <input type="tel" id="phone" placeholder="מספר טלפון" required class="w-full p-5 bg-gray-50 rounded-2xl outline-none font-bold text-right">
                 <textarea id="project" placeholder="מה המטרה של האתר?" rows="4" class="w-full p-5 bg-gray-50 rounded-2xl outline-none font-medium text-right"></textarea>
-                <button type="submit" id="submitBtn" class="w-full py-5 bg-black text-white rounded-2xl font-black text-lg shadow-2xl transition">שלח פנייה</button>
+                <button type="submit" id="submitBtn" class="w-full py-5 bg-black text-white rounded-2xl font-black text-lg shadow-2xl transition hover:opacity-90">שלח פנייה</button>
             </form>
         </div>
     </section>
@@ -287,7 +306,15 @@
         <p class="text-[9px] text-gray-300 uppercase tracking-[0.6em] font-bold">TGI WEBS • TAL GAZIT • ALONEY ABBA</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // אתחול האנימציות
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
         function triggerToast() {
             const toast = document.getElementById('toast');
             toast.classList.add('show');
@@ -399,6 +426,8 @@
             if (pageId === 'home') backBtn.classList.add('hide');
             else backBtn.classList.remove('hide');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            // רענון אנימציות במעבר דף
+            setTimeout(() => AOS.refresh(), 100);
         }
         function scrollToContact() { document.getElementById('contactSection').scrollIntoView({ behavior: 'smooth' }); }
     </script>
